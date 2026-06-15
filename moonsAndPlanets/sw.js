@@ -1,7 +1,6 @@
 // Service worker — precache app shell + assets for full offline use
-const CACHE = 'moons-planets-v3';
+const CACHE = 'moons-planets-v4';
 const ASSETS = [
-  "./",
   "./index.html",
   "./manifest.webmanifest",
   "./css/styles.css",
@@ -68,14 +67,40 @@ self.addEventListener('activate', (e) => {
   );
 });
 
+// Safari/Chrome refuse to serve a *redirected* response to a page navigation
+// from a service worker. Rebuild any redirected response as a plain one.
+async function noRedirect(response) {
+  if (!response || !response.redirected) return response;
+  const body = await response.clone().arrayBuffer();
+  return new Response(body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers
+  });
+}
+
 self.addEventListener('fetch', (e) => {
-  if (e.request.method !== 'GET') return;
+  const req = e.request;
+  if (req.method !== 'GET') return;
+
+  // Page navigations: always serve the clean app shell, never a redirected response.
+  if (req.mode === 'navigate') {
+    e.respondWith((async () => {
+      const shell = await caches.match('./index.html');
+      if (shell) return noRedirect(shell);
+      try { return await noRedirect(await fetch(req)); }
+      catch { return (await caches.match('./index.html')) || Response.error(); }
+    })());
+    return;
+  }
+
+  // Other GETs: cache-first, then network (and cache the result).
   e.respondWith(
-    caches.match(e.request).then((hit) => {
+    caches.match(req).then((hit) => {
       if (hit) return hit;
-      return fetch(e.request).then((res) => {
+      return fetch(req).then((res) => {
         const copy = res.clone();
-        caches.open(CACHE).then((c) => c.put(e.request, copy)).catch(() => {});
+        caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
         return res;
       }).catch(() => caches.match('./index.html'));
     })
