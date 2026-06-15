@@ -1,5 +1,5 @@
 // Service worker — precache app shell + assets for full offline use
-const CACHE = 'moons-planets-v1';
+const CACHE = 'moons-planets-v3';
 const ASSETS = [
   "./",
   "./index.html",
