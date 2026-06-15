@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_kerberos" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#c4c1be"/>
+    <stop offset="45%" stop-color="#7d766f"/>
+    <stop offset="100%" stop-color="#383531"/>
+  </radialGradient>
+  <radialGradient id="sh_kerberos" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_kerberos"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_kerberos)"/>
+<g clip-path="url(#c_kerberos)"><circle cx="95.1" cy="103.0" r="10.9" fill="#4b4642" opacity="0.13"/><circle cx="113.4" cy="84.7" r="9.9" fill="#4b4642" opacity="0.14"/><circle cx="127.3" cy="96.1" r="10.3" fill="#4b4642" opacity="0.14"/><circle cx="106.0" cy="111.7" r="9.6" fill="#4b4642" opacity="0.24"/><circle cx="40.7" cy="137.1" r="10.4" fill="#4b4642" opacity="0.16"/><circle cx="34.6" cy="94.7" r="5.6" fill="#4b4642" opacity="0.17"/><circle cx="110.6" cy="99.8" r="3.6" fill="#4b4642" opacity="0.26"/><circle cx="114.4" cy="116.8" r="10.8" fill="#4b4642" opacity="0.27"/><circle cx="64.5" cy="55.0" r="3.9" fill="#4b4642" opacity="0.17"/><circle cx="121.3" cy="134.0" r="5.9" fill="#4b4642" opacity="0.11"/><circle cx="75.3" cy="140.4" r="5.8" fill="#4b4642" opacity="0.16"/><circle cx="104.3" cy="89.0" r="5.4" fill="#4b4642" opacity="0.23"/><circle cx="101.0" cy="105.2" r="9.2" fill="#4b4642" opacity="0.20"/><circle cx="31.3" cy="90.9" r="4.5" fill="#4b4642" opacity="0.10"/><circle cx="88.5" cy="80.0" r="8.8" fill="#4b4642" opacity="0.24"/><circle cx="55.8" cy="63.6" r="8.9" fill="#4b4642" opacity="0.21"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_kerberos)"/>
+
+</g>
+</svg>

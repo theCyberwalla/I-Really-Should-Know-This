@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_uranus" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#d3f1f1"/>
+    <stop offset="45%" stop-color="#9fe0e0"/>
+    <stop offset="100%" stop-color="#476464"/>
+  </radialGradient>
+  <radialGradient id="sh_uranus" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_uranus"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_uranus)"/>
+<g clip-path="url(#c_uranus)"><rect x="20" y="40" width="160" height="15" fill="#aae3e3" opacity="0.5"/><rect x="20" y="55" width="160" height="7" fill="#a5e2e2" opacity="0.5"/><rect x="20" y="62" width="160" height="8" fill="#b6e7e7" opacity="0.5"/><rect x="20" y="70" width="160" height="14" fill="#aee4e4" opacity="0.5"/><rect x="20" y="85" width="160" height="12" fill="#82b7b7" opacity="0.5"/><rect x="20" y="96" width="160" height="13" fill="#86bdbd" opacity="0.5"/><rect x="20" y="109" width="160" height="12" fill="#c2ebeb" opacity="0.5"/><rect x="20" y="122" width="160" height="13" fill="#b2e6e6" opacity="0.5"/><rect x="20" y="134" width="160" height="15" fill="#92cece" opacity="0.5"/><rect x="20" y="149" width="160" height="13" fill="#b5e7e7" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_uranus)"/>
+
+</g>
+</svg>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Really Should Know This</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f5f7;
+    --surface:#ffffff;
+    --surface-2:#f7f8fa;
+    --ink:#10131a;
+    --ink-2:#475066;
+    --ink-3:#8a93a6;
+    --line:#e6e9ef;
+    --line-2:#dde1e9;
+    --accent:#3f3d9c;        /* refined indigo */
+    --accent-2:#5957c4;
+    --accent-ink:#2b2a6e;
+    --accent-soft:#eeeefb;
+    --good:#1f8a5b;
+    --good-soft:#e8f5ee;
+    --good-line:#bfe4cf;
+    --bad:#c0392b;
+    --bad-soft:#fcecea;
+    --bad-line:#f0c8c2;
+    --gold:#a87b1e;
+    --gold-soft:#f7efdc;
+    --radius:14px;
+    --radius-lg:18px;
+    --shadow:0 1px 2px rgba(16,19,26,.04), 0 6px 20px rgba(16,19,26,.06);
+    --shadow-sm:0 1px 2px rgba(16,19,26,.05);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 18px 96px;position:relative}
+  svg{display:block}
+  .i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+
+  /* ---------- header ---------- */
+  .appbar{
+    position:sticky;top:0;z-index:40;background:rgba(244,245,247,.82);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+  }
+  .appbar-in{max-width:var(--maxw);margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:14px}
+  .brand{display:flex;align-items:center;gap:11px;flex:1;min-width:0;cursor:pointer}
+  .brand .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .brand .mark .i{width:19px;height:19px;stroke:#fff}
+  .brand .txt{min-width:0}
+  .brand .txt b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.2px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand .txt span{font-size:11px;color:var(--ink-3);font-weight:500;letter-spacing:.2px}
+  .chips{display:flex;gap:8px;align-items:center}
+  .chip{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 11px;line-height:1}
+  .chip .i{width:16px;height:16px;stroke-width:1.9}
+  .chip .v{font-weight:700;font-size:13.5px}
+  .chip .l{font-size:11px;color:var(--ink-3);font-weight:500;display:none}
+  .chip.streak{color:var(--gold)}
+  .chip.points{color:var(--accent)}
+  .chip .v{color:var(--ink)}
+
+  /* ---------- dashboard top ---------- */
+  .dash{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:26px}
+
+  .brief{
+    position:relative;overflow:hidden;border-radius:var(--radius-lg);color:#fff;
+    background:radial-gradient(120% 140% at 100% 0%, #4b48b0 0%, #34326f 48%, #26244e 100%);
+    padding:26px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  }
+  .brief::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(40% 60% at 88% 18%, rgba(255,255,255,.10), transparent 70%);pointer-events:none}
+  .eyebrow{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#c8c7ef}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#8e8ce6;box-shadow:0 0 0 4px rgba(142,140,230,.25)}
+  .brief h2{font-size:20px;font-weight:700;letter-spacing:-.3px;margin:13px 0 8px;max-width:34ch}
+  .brief p{font-size:14px;color:#d9d8f2;max-width:54ch;font-weight:450}
+  .brief .spacer{flex:1;min-height:14px}
+
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm)}
+  .panel .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+  .lvl-name{font-size:15px;font-weight:700;letter-spacing:-.2px}
+  .lvl-sub{font-size:12px;color:var(--ink-3);font-weight:500}
+  .lvl-num{font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:7px}
+  .xp-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2);font-weight:500;margin:14px 0 7px}
+  .track{height:9px;background:var(--surface-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:20px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .mini-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+  .ms{text-align:left}
+  .ms .n{font-size:18px;font-weight:700;letter-spacing:-.4px}
+  .ms .k{font-size:11px;color:var(--ink-3);font-weight:500;margin-top:1px}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:inherit;font-weight:600;font-size:14.5px;letter-spacing:-.1px;
+    border:1px solid transparent;border-radius:11px;padding:12px 18px;cursor:pointer;
+    transition:background .15s,border-color .15s,transform .04s,box-shadow .15s;width:100%;
+  }
+  .btn:active{transform:translateY(.5px)}
+  .btn .i{width:18px;height:18px}
+  .btn.light{background:#fff;color:var(--accent-ink)}
+  .btn.light:hover{background:#f2f2fb}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--accent-2)}
+  .btn.good{background:var(--good);color:#fff}
+  .btn.good:hover{filter:brightness(1.05)}
+  .btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line-2)}
+  .btn.ghost:hover{background:var(--surface-2)}
+  .btn.sm{width:auto;padding:10px 16px;font-size:13.5px}
+
+  /* ---------- section headers ---------- */
+  .sec{margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+  .sec h3{font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-2)}
+  .sec .meta{font-size:12.5px;color:var(--ink-3);font-weight:500}
+  .block{margin-bottom:30px}
+
+  /* ---------- knowledge grid ---------- */
+  .grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .topic{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .08s;
+    position:relative;display:flex;flex-direction:column;
+  }
+  .topic:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
+  .topic:active{transform:scale(.995)}
+  .topic .top{display:flex;align-items:flex-start;gap:12px}
+  .topic .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .topic .ic .i{width:22px;height:22px;stroke-width:1.7}
+  .topic .name{font-weight:700;font-size:15px;letter-spacing:-.2px;line-height:1.25;margin-top:1px}
+  .topic .desc{font-size:12px;color:var(--ink-3);font-weight:450;margin-top:2px}
+  .topic .foot{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .topic .bar{flex:1;height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .topic .bar i{display:block;height:100%;width:0;border-radius:10px;transition:width .5s}
+  .topic .pct{font-size:11.5px;font-weight:600;color:var(--ink-2);min-width:34px;text-align:right}
+  .pill{font-size:10.5px;font-weight:600;letter-spacing:.3px;padding:3px 8px;border-radius:20px;border:1px solid var(--line-2);color:var(--ink-3);background:var(--surface-2);white-space:nowrap}
+  .pill.mastered{color:var(--good);background:var(--good-soft);border-color:var(--good-line)}
+  .topic .status{position:absolute;top:14px;right:14px}
+
+  /* ---------- achievements ---------- */
+  .ach{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .badge{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:13px 14px}
+  .badge .disc{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-3)}
+  .badge .disc .i{width:20px;height:20px}
+  .badge .bn{font-size:13px;font-weight:600;letter-spacing:-.1px;line-height:1.2}
+  .badge .bd{font-size:11px;color:var(--ink-3);font-weight:450;margin-top:1px}
+  .badge.on .disc{background:var(--gold-soft);border-color:#e9d6a8;color:var(--gold)}
+  .badge.on .bn{color:var(--ink)}
+  .badge:not(.on){opacity:.72}
+
+  /* ---------- quiz ---------- */
+  #quiz,#result{max-width:680px}
+  .qtop{display:flex;align-items:center;gap:14px;margin:6px 0 22px}
+  .x{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto}
+  .x:hover{background:var(--surface-2)}
+  .qtrack{flex:1;height:8px;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .qfill{height:100%;width:0;background:var(--accent);border-radius:20px;transition:width .35s}
+  .qlives{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--ink-2)}
+  .qlives .i{width:17px;height:17px;stroke:var(--bad);fill:var(--bad)}
+
+  .qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 24px;box-shadow:var(--shadow-sm);margin-bottom:18px}
+  .qtag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .qtag .i{width:15px;height:15px}
+  .qtext{font-size:21px;font-weight:700;letter-spacing:-.3px;line-height:1.35}
+  .qnum{font-size:12px;color:var(--ink-3);font-weight:500;margin-top:12px}
+
+  .opts{display:grid;grid-template-columns:1fr;gap:11px;margin-bottom:14px}
+  .opt{
+    display:flex;align-items:center;gap:13px;text-align:left;width:100%;
+    background:var(--surface);border:1px solid var(--line-2);border-radius:12px;
+    padding:15px 16px;font-family:inherit;font-size:15px;font-weight:500;color:var(--ink);
+    cursor:pointer;transition:border-color .12s,background .12s,box-shadow .12s;
+  }
+  .opt:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .opt .key{width:26px;height:26px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;color:var(--ink-2);flex:0 0 auto;transition:.12s}
+  .opt .mk{margin-left:auto;width:20px;height:20px;opacity:0;transition:opacity .15s}
+  .opt.correct{border-color:var(--good);background:var(--good-soft)}
+  .opt.correct .key{background:var(--good);border-color:var(--good);color:#fff}
+  .opt.correct .mk{opacity:1;stroke:var(--good)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+  .opt.wrong .key{background:var(--bad);border-color:var(--bad);color:#fff}
+  .opt.wrong .mk{opacity:1;stroke:var(--bad)}
+  .opt.disabled{pointer-events:none}
+  .opt.disabled:not(.correct):not(.wrong){opacity:.55}
+
+  /* feedback drawer */
+  .scrim{position:fixed;inset:0;background:rgba(16,19,26,.28);opacity:0;visibility:hidden;transition:.25s;z-index:49}
+  .scrim.on{opacity:1;visibility:visible}
+  .drawer{position:fixed;left:0;right:0;bottom:0;z-index:50;transform:translateY(110%);transition:transform .34s cubic-bezier(.2,.9,.3,1)}
+  .drawer.up{transform:translateY(0)}
+  .drawer .inner{max-width:680px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-bottom:none;border-radius:18px 18px 0 0;padding:22px 22px 26px;box-shadow:0 -8px 40px rgba(16,19,26,.14)}
+  .drawer .hd{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:-.2px;margin-bottom:9px}
+  .drawer .hd .badge-ic{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+  .drawer .hd .badge-ic .i{width:17px;height:17px;stroke:#fff;stroke-width:2.2}
+  .drawer.good .hd{color:var(--good)}
+  .drawer.good .badge-ic{background:var(--good)}
+  .drawer.bad .hd{color:var(--bad)}
+  .drawer.bad .badge-ic{background:var(--bad)}
+  .drawer .why{font-size:14px;line-height:1.6;color:var(--ink-2);font-weight:450}
+  .drawer .why b{font-weight:700;color:var(--ink)}
+  .drawer .btn{margin-top:18px}
+
+  /* result */
+  .rcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:34px 26px;box-shadow:var(--shadow);text-align:center;margin-bottom:14px}
+  .rcard .badge-lg{width:72px;height:72px;border-radius:18px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;animation:pop .45s cubic-bezier(.2,.9,.3,1)}
+  .rcard .badge-lg .i{width:38px;height:38px;stroke:#fff;stroke-width:2}
+  @keyframes pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1)}}
+  .rcard h2{font-size:23px;font-weight:700;letter-spacing:-.4px;margin-bottom:6px}
+  .rcard .sub{color:var(--ink-2);font-size:14px;font-weight:450;margin-bottom:22px;max-width:40ch;margin-left:auto;margin-right:auto}
+  .rstats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .rstat{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:15px 8px}
+  .rstat .n{font-size:22px;font-weight:700;letter-spacing:-.5px;line-height:1}
+  .rstat .l{font-size:11px;font-weight:500;color:var(--ink-3);text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
+  .rstat.a .n{color:var(--good)}
+  .rstat.b .n{color:var(--accent)}
+  .rstat.c .n{color:var(--gold)}
+  .ractions{display:flex;flex-direction:column;gap:10px}
+
+  /* confetti / toast */
+  .confetti{position:fixed;width:8px;height:12px;top:-20px;z-index:60;border-radius:1px;pointer-events:none}
+  .toast{position:fixed;left:50%;top:18px;transform:translateX(-50%) translateY(-130%);background:var(--ink);color:#fff;padding:11px 16px;border-radius:11px;font-weight:600;font-size:13.5px;z-index:80;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.9,.3,1);display:flex;align-items:center;gap:9px;max-width:90vw}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  .toast .i{width:17px;height:17px;stroke:#8e8ce6;stroke-width:2}
+
+  .foot{text-align:center;color:var(--ink-3);font-size:12px;font-weight:450;margin-top:8px;line-height:1.7}
+  .reset{color:var(--accent);cursor:pointer;font-weight:500}
+  .reset:hover{text-decoration:underline}
+
+  /* ---------- overview (read-first) ---------- */
+  #overview{max-width:880px}
+  a.btn{text-decoration:none}
+  .back{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--ink-2);font-family:inherit;font-weight:600;font-size:13.5px;cursor:pointer;padding:8px 4px 8px 0;margin-bottom:8px}
+  .back:hover{color:var(--ink)}
+  .back .i{width:18px;height:18px}
+  .ov-head{display:flex;align-items:center;gap:15px;margin-bottom:18px}
+  .ov-ic{width:58px;height:58px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .ov-ic .i{width:30px;height:30px;stroke-width:1.7}
+  .ov-head h2{font-size:24px;font-weight:700;letter-spacing:-.5px;line-height:1.15}
+  .ov-head .d{font-size:13px;color:var(--ink-3);font-weight:500;margin-top:3px}
+  .ov-lead{font-size:16.5px;line-height:1.65;color:var(--ink-2);font-weight:450;margin-bottom:24px;max-width:68ch}
+  .learn-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:22px}
+  .learn{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 19px;box-shadow:var(--shadow-sm)}
+  .learn h4{font-size:15.5px;font-weight:700;letter-spacing:-.2px;margin-bottom:8px;display:flex;align-items:center;gap:11px;line-height:1.25}
+  .learn h4 .n{width:24px;height:24px;border-radius:7px;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .learn p{font-size:14px;line-height:1.62;color:var(--ink-2);font-weight:450}
+  .callout{display:flex;gap:12px;background:var(--gold-soft);border:1px solid #ecdcb4;border-radius:14px;padding:15px 17px;margin-bottom:26px}
+  .callout .i{width:20px;height:20px;stroke:var(--gold);stroke-width:1.9;flex:0 0 auto;margin-top:1px}
+  .callout .ct{font-size:13.5px;line-height:1.55;color:#6b5417;font-weight:500}
+  .callout .ct b{font-weight:700}
+  .ov-actions{display:flex;flex-direction:column;gap:10px}
+
+  /* ---------- responsive ---------- */
+  @media(min-width:640px){
+    .chip .l{display:inline}
+    .grid{grid-template-columns:1fr 1fr}
+  }
+  @media(min-width:760px){
+    .wrap{padding:26px 26px 110px}
+    .dash{grid-template-columns:1.5fr 1fr;align-items:stretch}
+    .brief h2{font-size:23px}
+    .opts{grid-template-columns:1fr 1fr}
+    .opt{font-size:15px}
+    .learn-grid{grid-template-columns:1fr 1fr}
+    .ov-actions{flex-direction:row}
+    .ov-actions .btn{flex:1}
+  }
+  @media(min-width:1040px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .qtext{font-size:23px}
+  }
+</style>
+</head>
+<body>
+<div class="toast" id="toast"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l4 5-4 13-4-13 4-5z"/><path d="M8 8h8"/></svg><span id="toastMsg"></span></div>
+<div class="scrim" id="scrim"></div>
+
+<!-- ============ HEADER ============ -->
+<div class="appbar">
+  <div class="appbar-in">
+    <div class="brand" onclick="goHome()">
+      <div class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V7l8-4z"/><path d="M12 8v4M12 15.5v.01"/></svg></div>
+      <div class="txt">
+        <b>I Really Should Know This</b>
+        <span>General knowledge, mastered</span>
+      </div>
+    </div>
+    <div class="chips">
+      <div class="chip streak">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 3c.5 2.8-1.6 4-1.6 6.4A2.4 2.4 0 0 0 13 12c1.9 0 2.9-1.6 2.4-2.9.9.7 2.6 2.5 2.6 5.1a5.5 5.5 0 1 1-11 0c0-3 2-4.6 2.5-6.6C9.7 5 11 4 12 3z"/></svg>
+        <span class="v" id="streakN">0</span><span class="l">streak</span>
+      </div>
+      <div class="chip points">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 3l4 5-4 13-4-13 4-5z"/><path d="M8 8h8"/></svg>
+        <span class="v" id="gemN">0</span><span class="l">points</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HOME ============ -->
+<div class="wrap" id="home">
+  <div class="dash">
+    <div class="brief">
+      <div class="eyebrow"><span class="dot"></span>Daily Briefing</div>
+      <h2 id="ddTitle">Why does a compass point north?</h2>
+      <p id="ddBody">A short, sharp fact to start the day — the kind of thing you nod along to but never quite learned. Worth points toward your streak.</p>
+      <div class="spacer"></div>
+      <button class="btn light sm" id="ddBtn" onclick="dailyDiscovery()" style="align-self:flex-start;margin-top:18px">Reveal today's briefing</button>
+    </div>
+
+    <div class="panel">
+      <div class="head">
+        <div>
+          <div class="lvl-name" id="lvlTitle">Curious Beginner</div>
+          <div class="lvl-sub">Your current standing</div>
+        </div>
+        <div class="lvl-num">Level <span id="lvlN">1</span></div>
+      </div>
+      <div class="xp-meta"><span>Progress to next level</span><span><span id="xpCur">0</span> / <span id="xpNext">100</span> XP</span></div>
+      <div class="track"><div class="fill" id="xpFill"></div></div>
+      <div class="mini-stats">
+        <div class="ms"><div class="n" id="msAreas">0</div><div class="k">Areas mastered</div></div>
+        <div class="ms"><div class="n" id="msAnswered">0</div><div class="k">Questions seen</div></div>
+        <div class="ms"><div class="n" id="msAch">0</div><div class="k">Achievements</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="sec"><h3>Knowledge Areas</h3><span class="meta" id="mapMeta">0 of 10 mastered</span></div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="block">
+    <div class="sec"><h3>Achievements</h3><span class="meta" id="badgeMeta">0 earned</span></div>
+    <div class="ach" id="badges"></div>
+  </div>
+
+  <div class="block">
+    <button class="btn primary" onclick="startMix()" style="max-width:320px;margin:0 auto;display:flex">
+      <svg class="i" viewBox="0 0 24 24"><path d="M4 7h11M4 12h16M4 17h8"/><path d="M17 14l3 3-3 3"/></svg>
+      Quick mixed review
+    </button>
+  </div>
+
+  <div class="foot">
+    Progress is saved locally on this device.&nbsp; <span class="reset" onclick="resetAll()">Reset all progress</span>
+  </div>
+</div>
+
+<!-- ============ OVERVIEW (read-first) ============ -->
+<div class="wrap" id="overview" style="display:none">
+  <button class="back" onclick="goHome()"><svg class="i" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Dashboard</button>
+  <div id="ovContent"></div>
+</div>
+
+<!-- ============ QUIZ ============ -->
+<div class="wrap" id="quiz" style="display:none">
+  <div class="qtop">
+    <div class="x" onclick="quitQuiz()"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+    <div class="qtrack"><div class="qfill" id="qfill"></div></div>
+    <div class="qlives"><svg class="i" viewBox="0 0 24 24"><path d="M12 20.5C5 16.5 3 12.8 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3.9 4.3 2.3 1-1.4 2.6-2.3 4.3-2.3 2.5 0 4.7 1.9 4.7 4.8 0 3.5-2 7.2-9 11.2z"/></svg><span id="lives">3</span></div>
+  </div>
+  <div class="qcard">
+    <div class="qtag" id="qtopic"><span>Topic</span></div>
+    <div class="qtext" id="qtext">Question?</div>
+    <div class="qnum" id="qnum"></div>
+  </div>
+  <div class="opts" id="opts"></div>
+</div>
+
+<!-- ============ RESULT ============ -->
+<div class="wrap" id="result" style="display:none">
+  <div class="rcard">
+    <div class="badge-lg" id="rBadge"></div>
+    <h2 id="rTitle">Session complete</h2>
+    <div class="sub" id="rSub">You're building real momentum.</div>
+    <div class="rstats">
+      <div class="rstat a"><div class="n" id="rScore">0/0</div><div class="l">Correct</div></div>
+      <div class="rstat b"><div class="n" id="rXP">+0</div><div class="l">XP earned</div></div>
+      <div class="rstat c"><div class="n" id="rStreak">0</div><div class="l">Day streak</div></div>
+    </div>
+  </div>
+  <div class="ractions">
+    <button class="btn primary" onclick="goHome()">Back to dashboard</button>
+    <button class="btn ghost" id="againBtn" onclick="againSame()">Start another session</button>
+  </div>
+</div>
+
+<!-- feedback drawer -->
+<div class="drawer" id="drawer">
+  <div class="inner">
+    <div class="hd" id="dHd"></div>
+    <div class="why" id="dWhy"></div>
+    <button class="btn primary" id="dBtn" onclick="nextQuestion()">Continue</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   I Really Should Know This — adult general-knowledge trainer
+   ============================================================ */
+
+/* ---- inline icon set (24x24, stroke=currentColor) ---- */
+const ICONS={
+  history:'<path d="M3 21h18M5 21V10m4.5 11V10M14.5 21V10M19 21V10M3.5 10h17L12 3.5 3.5 10z"/>',
+  geography:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/>',
+  science:'<path d="M9.5 3h5M10.5 3v5.5l-4.7 8.2A2 2 0 0 0 7.5 20h9a2 2 0 0 0 1.7-3.3L13.5 8.5V3"/><path d="M8 14h8"/>',
+  civics:'<path d="M12 3l8 4M4 7h16M5 7v9M19 7v9M9 7v9M15 7v9M4 16h16M3.5 20h17"/>',
+  finance:'<ellipse cx="12" cy="6.5" rx="7" ry="3"/><path d="M5 6.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5M5 11.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/>',
+  tech:'<rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9.5 3v3M14.5 3v3M9.5 18v3M14.5 18v3M3 9.5h3M3 14.5h3M18 9.5h3M18 14.5h3"/>',
+  health:'<rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8.5v7M8.5 12h7"/>',
+  economics:'<path d="M3 17l5.5-5.5 3.5 3.5L21 6"/><path d="M15 6h6v6"/>',
+  ai:'<circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="1.6"/><circle cx="19" cy="5" r="1.6"/><circle cx="5" cy="19" r="1.6"/><circle cx="19" cy="19" r="1.6"/><path d="M6.7 6.7l3 3M14.3 9.7l3-3M6.7 17.3l3-3M14.3 14.3l3 3"/>',
+  cyber:'<path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/>',
+  check:'<path d="M5 12.5l4.5 4.5L19 7"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/>',
+  trophy:'<path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v1a3 3 0 0 0 3 3M17 5h3v1a3 3 0 0 1-3 3M9 13.5l-.5 4h7l-.5-4M8 21h8M10 17.5h4"/>',
+  book:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/>',
+  flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+  spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/>',
+  compass:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/>',
+  crown:'<path d="M4 8l3.5 3L12 5l4.5 6L20 8l-1.5 9H5.5L4 8z"/><path d="M5.5 20h13"/>',
+  medal:'<circle cx="12" cy="14" r="5"/><path d="M9 9.5L6.5 3M15 9.5L17.5 3M12 11.5l1 2 2 .2-1.4 1.4.4 2-2-1-2 1 .4-2L9 13.7l2-.2 1-2z"/>',
+  seedling:'<path d="M12 21v-7M12 14c0-3-2-5-5-5-1 0 0 3 2 4s3 1 3 1zM12 12c0-2.5 1.8-4.5 4.5-4.5 1 0 0 3-1.8 3.8S12 12 12 12z"/>',
+  moons:'<circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-22 12 12)"/>',
+  play:'<path d="M7 5.5v13l11-6.5-11-6.5z"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+  rocket:'<path d="M12 3c3 1 5 4 5 8l-2 5H9l-2-5c0-4 2-7 5-8z"/><path d="M9 16l-2 4M15 16l2 4M12 11v.01"/>'
+};
+function svg(name,cls){return '<svg class="'+(cls||'i')+'" viewBox="0 0 24 24">'+ICONS[name]+'</svg>';}
+
+const TOPICS=[
+ {id:"history",  name:"History",            desc:"How we got here",        tint:"#eef0fb",fg:"#3f3d9c",bar:"#5957c4"},
+ {id:"geography",name:"Geography",          desc:"The world & its workings",tint:"#e7f3fb",fg:"#1f6f99",bar:"#2f8fc0"},
+ {id:"science",  name:"Science",            desc:"Why things behave",       tint:"#e8f5ee",fg:"#1f8a5b",bar:"#2aa56e"},
+ {id:"civics",   name:"Civics & Government",desc:"How power is organised",   tint:"#efecfa",fg:"#5a3fa0",bar:"#6f54c0"},
+ {id:"finance",  name:"Personal Finance",   desc:"Money that works for you", tint:"#f7efdc",fg:"#a87b1e",bar:"#c79528"},
+ {id:"tech",     name:"Technology",         desc:"What's under the hood",    tint:"#eceefb",fg:"#3b3aa8",bar:"#5453c4"},
+ {id:"health",   name:"Health Literacy",    desc:"Your body, explained",     tint:"#fbecef",fg:"#b03a5b",bar:"#cc4d70"},
+ {id:"economics",name:"Everyday Economics",  desc:"Markets & money in motion",tint:"#e8f4ef",fg:"#1d7d5a",bar:"#2a9a6f"},
+ {id:"ai",       name:"AI Literacy",        desc:"How modern AI works",      tint:"#e7f1fb",fg:"#2563a8",bar:"#3a7fc4"},
+ {id:"cyber",    name:"Cybersecurity",      desc:"Stay safe online",         tint:"#fbecec",fg:"#b03434",bar:"#cc4747"},
+ {id:"moons",    name:"Moons & Planets",    desc:"A tour of the Solar System",tint:"#ecebfb",fg:"#4b3fa0",bar:"#6f54c0",explorer:"moonsAndPlanets/index.html"},
+];
+
+/* question bank: {q, opts[4], a(index), why} */
+const BANK={
+history:[
+ {q:"Roughly how long ago did the last ice age end?",opts:["About 11,000 years ago","About 500 years ago","About 2 million years ago","About 100,000 years ago"],a:0,why:"The last ice age wound down around <b>11,000 years ago</b> — right as humans began farming. Civilisation is essentially a warm-period project."},
+ {q:"The printing press in Europe is credited to whom?",opts:["Leonardo da Vinci","Johannes Gutenberg","Galileo","Benjamin Franklin"],a:1,why:"<b>Gutenberg</b> introduced movable-type printing around 1440. It made books cheap, spread literacy, and arguably lit the fuse for the Reformation and modern science."},
+ {q:"World War I began in which year?",opts:["1905","1914","1918","1939"],a:1,why:"WWI started in <b>1914</b> and ended in 1918. The number people mix up — 1939 — is the start of WWII."},
+ {q:"The pyramids at Giza are closer in time to which of these?",opts:["Cleopatra's reign","The Moon landing","The fall of Rome","The Industrial Revolution"],a:0,why:"Cleopatra lived closer to the Moon landing (1969) than to the building of the pyramids (~2500 BC). The pyramids are <b>staggeringly old</b> — even to the ancients."},
+ {q:"What was the Renaissance, broadly?",opts:["A war between France and England","A revival of art, science and learning in Europe","A medieval plague","A trade route to Asia"],a:1,why:"The Renaissance (~14th–17th c.) was a <b>rebirth of classical ideas</b> — fuelling art, anatomy, astronomy and the modern worldview."},
+ {q:"The Berlin Wall fell in which year?",opts:["1971","1989","1995","2001"],a:1,why:"It fell in <b>1989</b>, symbolising the end of the Cold War divide between East and West."},
+],
+geography:[
+ {q:"Which is the largest ocean on Earth?",opts:["Atlantic","Indian","Pacific","Arctic"],a:2,why:"The <b>Pacific</b> is the biggest — larger than all of Earth's land combined. It spans roughly a third of the planet's surface."},
+ {q:"What's the difference between weather and climate?",opts:["Nothing, they're synonyms","Weather is short-term, climate is the long-term average","Climate only means temperature","Weather is only indoors"],a:1,why:"<b>Weather</b> is what's happening now (today's rain); <b>climate</b> is the decades-long pattern. One cold day doesn't disprove a warming climate."},
+ {q:"The Equator passes through which continent?",opts:["Europe","Australia","South America","North America"],a:2,why:"The Equator crosses <b>South America</b> (Ecuador, Colombia, Brazil), plus Africa and Asia. Countries on it have little seasonal change."},
+ {q:"Which country has the most people?",opts:["China","United States","India","Russia"],a:2,why:"As of the mid-2020s, <b>India</b> overtook China as the most populous country, with over 1.4 billion people."},
+ {q:"What causes Earth's seasons?",opts:["Distance from the Sun","The tilt of Earth's axis","The Moon's gravity","Ocean currents"],a:1,why:"It's the <b>23.5° axial tilt</b>, not distance. When your hemisphere leans toward the Sun you get summer — Earth is actually farthest from the Sun in July."},
+ {q:"Time zones exist mainly because…",opts:["Of international politics","Earth rotates, so noon differs by longitude","The Moon's orbit","Of magnetic poles"],a:1,why:"Earth <b>rotates</b>, so the Sun is overhead at different places at different moments. Zones keep clocks roughly in sync with daylight."},
+],
+science:[
+ {q:"Why is the sky blue?",opts:["It reflects the ocean","Blue light scatters more in the atmosphere","The Sun emits only blue light","Air is naturally blue"],a:1,why:"Sunlight hits air molecules and <b>shorter (blue) wavelengths scatter most</b>. At sunset, light travels farther, blue scatters away, and you're left with red."},
+ {q:"What is DNA, essentially?",opts:["A type of protein","The molecule carrying genetic instructions","A kind of sugar","A brain chemical"],a:1,why:"<b>DNA</b> is the instruction manual in nearly every cell — a chemical code that tells your body how to build and run itself."},
+ {q:"Sound travels fastest through which medium?",opts:["A vacuum","Air","Water","Steel"],a:3,why:"Sound moves fastest through <b>solids</b> like steel, because tightly-packed particles pass the vibration along quickly. In a vacuum it can't travel at all."},
+ {q:"What is an atom mostly made of?",opts:["Solid matter","Empty space","Water","Light"],a:1,why:"An atom is overwhelmingly <b>empty space</b> — the nucleus is tiny relative to the electron cloud. Solids feel solid because of electric forces, not because they're 'full'."},
+ {q:"Why do we have day and night?",opts:["The Sun orbits Earth","Earth spins on its axis","The Moon blocks the Sun","Earth's orbit around the Sun"],a:1,why:"Earth <b>rotates once every ~24 hours</b>. The side facing the Sun has day; the other has night. The yearly orbit gives us the calendar year, not the day."},
+ {q:"What does a vaccine essentially do?",opts:["Kills viruses on contact","Trains your immune system in advance","Replaces your blood","Adds vitamins"],a:1,why:"A vaccine shows your immune system a harmless preview of a germ so it can <b>build defences before</b> a real infection — like a fire drill for your body."},
+],
+civics:[
+ {q:"What are the three branches of most democratic governments?",opts:["Federal, state, local","Legislative, executive, judicial","Army, navy, air force","Left, right, centre"],a:1,why:"<b>Legislative</b> (makes laws), <b>executive</b> (enforces them), <b>judicial</b> (interprets them). Separating them prevents any one part from holding all power."},
+ {q:"What does 'inflation' mean for everyday life?",opts:["Taxes go up","Prices generally rise over time","The currency is replaced","Wages are frozen by law"],a:1,why:"<b>Inflation</b> means your money buys a little less than before. It's why a coffee costs more than it did a decade ago — central banks try to keep it low and steady."},
+ {q:"What is the purpose of a constitution?",opts:["To list all citizens","A foundational rulebook for how a country is governed","A tax document","A historical diary"],a:1,why:"A <b>constitution</b> sets the basic rules — who holds power, citizens' rights, and limits on government. Most laws must fit within it."},
+ {q:"What does it mean to be a 'swing voter'?",opts:["Someone who always votes the same","Someone not loyal to one party","Someone who doesn't vote","A campaign worker"],a:1,why:"A <b>swing voter</b> isn't reliably loyal to one party, so campaigns court them heavily — they often decide close elections."},
+ {q:"What's the basic idea of 'separation of powers'?",opts:["Splitting the country into regions","Dividing government so no branch dominates","Keeping religion out of schools","Privatising services"],a:1,why:"Power is <b>split among branches</b> that check each other. The goal: stop any single person or group from gaining unchecked control."},
+ {q:"What is a 'filibuster' (where legislatures allow it)?",opts:["A type of election","Delaying a vote through prolonged debate","A budget bill","A judicial ruling"],a:1,why:"A <b>filibuster</b> stalls a decision by prolonging debate. It can force compromise — or gridlock — depending on your view."},
+],
+finance:[
+ {q:"What is compound interest?",opts:["Interest only on your original deposit","Interest earned on interest already earned","A government tax","A type of loan fee"],a:1,why:"<b>Compound interest</b> means your gains start earning gains. It's why investing early matters so much — time does the heavy lifting."},
+ {q:"What's the main difference between a debit and credit card?",opts:["Colour","Debit uses your money; credit borrows the bank's","Credit cards are free","Debit cards earn more points"],a:1,why:"A <b>debit card</b> spends money you already have; a <b>credit card</b> borrows it, to be repaid — with interest if you carry a balance."},
+ {q:"What does 'diversifying' investments mean?",opts:["Buying only one hot stock","Spreading money across different assets","Keeping all cash in savings","Trading every day"],a:1,why:"<b>Diversifying</b> spreads risk across many investments so one bad outcome won't sink you. Don't put all your eggs in one basket."},
+ {q:"What is a credit score, simply?",opts:["Your bank balance","A rating of how reliably you repay debt","Your yearly income","A type of loan"],a:1,why:"A <b>credit score</b> estimates how likely you are to repay borrowed money. A higher score usually means cheaper loans and easier approvals."},
+ {q:"Roughly, what's a sensible emergency-fund target?",opts:["No need for one","3–6 months of expenses","One day's pay","Your entire salary upfront"],a:1,why:"Most advisers suggest <b>3–6 months of expenses</b> in easy-to-reach savings — a cushion for job loss or surprise bills, so you avoid high-interest debt."},
+ {q:"What does APR tell you about a loan or card?",opts:["The monthly minimum","The yearly cost of borrowing, as a %","The credit limit","The bank's profit"],a:1,why:"<b>APR</b> (annual percentage rate) is the yearly cost of borrowing. A lower APR means the debt is cheaper to carry."},
+],
+tech:[
+ {q:"What does 'the cloud' actually mean?",opts:["Storage in the sky","Someone else's computers in data centres","Your phone's memory","A weather service"],a:1,why:"The 'cloud' is just <b>powerful computers in data centres</b> you access over the internet. Your photos aren't floating — they're on a server somewhere."},
+ {q:"What is an algorithm?",opts:["A type of computer","A step-by-step set of instructions","A social-media app","A kind of robot"],a:1,why:"An <b>algorithm</b> is simply a recipe — a precise sequence of steps to solve a problem. A cooking recipe is an algorithm too."},
+ {q:"What does 'open source' software mean?",opts:["It's always free of bugs","Its code is public and can be inspected or modified","It only runs offline","It has no password"],a:1,why:"<b>Open source</b> means the underlying code is public, so anyone can inspect, improve, or reuse it. It powers much of the internet."},
+ {q:"What's the difference between RAM and storage?",opts:["They're the same","RAM is short-term working memory; storage is long-term","RAM holds files forever","Storage is faster than RAM"],a:1,why:"<b>RAM</b> is your device's short-term desk space for active tasks; <b>storage</b> (disk/SSD) keeps files when it's powered off. More RAM = smoother multitasking."},
+ {q:"What does a browser's padlock icon mean?",opts:["The site is owned by you","The connection is encrypted (HTTPS)","The site is virus-free","You're logged in"],a:1,why:"The padlock means the <b>connection is encrypted</b> — data in transit is scrambled. It doesn't guarantee the site itself is honest, so stay alert."},
+ {q:"What is 'bandwidth'?",opts:["How much data your connection can carry","The size of your screen","Your battery life","A type of cable only"],a:0,why:"<b>Bandwidth</b> is how much data can flow per second — like the width of a pipe. More bandwidth means faster downloads and smoother video."},
+],
+health:[
+ {q:"What do antibiotics work against?",opts:["Viruses like the cold or flu","Bacterial infections","All germs equally","Allergies"],a:1,why:"Antibiotics fight <b>bacteria</b>, not viruses. Taking them for a cold won't help and fuels antibiotic resistance — a serious global problem."},
+ {q:"What does 'BMI' attempt to measure?",opts:["Body fat exactly","A rough weight-to-height ratio","Muscle mass","Blood pressure"],a:1,why:"<b>BMI</b> is a quick weight-for-height screen, not a precise health verdict. It can mislabel muscular people — a starting point, not a diagnosis."},
+ {q:"Why finish a full course of prescribed antibiotics?",opts:["To use up the bottle","To fully clear bacteria and limit resistance","They taste better over time","It's just tradition"],a:1,why:"Stopping early can leave <b>hardier bacteria</b> behind to rebound and spread resistance. Follow your clinician's guidance on duration."},
+ {q:"What is a 'placebo'?",opts:["A strong painkiller","A dummy treatment with no active drug","A vitamin","A vaccine"],a:1,why:"A <b>placebo</b> has no active ingredient. People sometimes still improve — the 'placebo effect' — which is why good trials compare drugs against it."},
+ {q:"How much sleep do most adults need nightly?",opts:["3–4 hours","7–9 hours","12 hours","It doesn't matter"],a:1,why:"Most adults need <b>7–9 hours</b>. Chronic shortfall affects mood, memory, immunity and heart health — sleep isn't a luxury."},
+ {q:"What does a reading like '120/80' refer to?",opts:["Cholesterol","Blood pressure","Blood sugar","Heart rate"],a:1,why:"It's <b>blood pressure</b> — the top number is the push when your heart beats, the bottom when it rests. Around 120/80 is commonly considered normal."},
+],
+economics:[
+ {q:"What is 'supply and demand'?",opts:["A government program","Prices respond to availability and desire","A type of tax","A trade treaty"],a:1,why:"When something is <b>scarce but wanted</b>, prices rise; when it's plentiful or unwanted, prices fall. It's the basic engine behind most prices."},
+ {q:"What is GDP?",opts:["A country's total debt","The value of all goods and services it produces","The number of jobs","The stock-market level"],a:1,why:"<b>GDP</b> measures the total output of an economy. Growing GDP usually signals expansion; shrinking GDP can signal recession."},
+ {q:"What is 'opportunity cost'?",opts:["The price tag of an item","The value of the next-best thing you gave up","A bank fee","A type of tax"],a:1,why:"<b>Opportunity cost</b> is what you sacrifice by choosing one option over another. Spend an hour on TV and the cost is whatever else that hour could've done."},
+ {q:"Why can printing lots of money cause problems?",opts:["It can't, money is unlimited","More money chasing the same goods can spark inflation","It always boosts wealth","Paper runs out"],a:1,why:"If money grows faster than goods, each unit buys <b>less</b> — that's inflation. Extreme cases (hyperinflation) can wreck savings overnight."},
+ {q:"What is a 'subsidy'?",opts:["A government payment to support an activity","A type of loan","A sales tax","A tariff"],a:0,why:"A <b>subsidy</b> is government support (cash or breaks) to make something cheaper or more viable — like aid for farmers or clean energy."},
+ {q:"What is a recession, in plain terms?",opts:["A single bad day on markets","A sustained decline in economic activity","A rise in prices","A government shutdown"],a:1,why:"A <b>recession</b> is a broad, lasting slowdown — output and jobs fall for months. It's bigger than one rough week on the stock market."},
+],
+ai:[
+ {q:"What does a large language model (a chatbot) fundamentally do?",opts:["Looks up answers in a database","Predicts likely next words from patterns","Thinks like a human brain","Searches the live web only"],a:1,why:"At its core it <b>predicts plausible next words</b> from patterns in training data. That's powerful — but it means it can sound confident while being wrong."},
+ {q:"What is an AI 'hallucination'?",opts:["A visual glitch","When AI states false information confidently","A type of virus","A privacy setting"],a:1,why:"A <b>hallucination</b> is fabricated-but-confident output. Always verify important facts — especially names, numbers, quotes and citations."},
+ {q:"What does 'training data' mean for an AI model?",opts:["The examples it learned patterns from","Its electricity supply","Its user manual","Its password"],a:0,why:"<b>Training data</b> is the huge set of examples a model learned from. Its strengths, blind spots and biases all trace back to that data."},
+ {q:"Why can AI models reflect human biases?",opts:["They're programmed to be unfair","They learn from human-made data that contains bias","They have opinions","Random chance only"],a:1,why:"Models <b>absorb patterns</b> from human data — including its biases. That's why testing, oversight and diverse data matter."},
+ {q:"A sensible habit when using AI for facts is to…",opts:["Trust every answer","Verify important claims with reliable sources","Never use it","Assume it's always wrong"],a:1,why:"Treat AI as a <b>fast assistant, not an oracle</b>. Cross-check anything consequential — it's great for drafts and ideas, fallible on specifics."},
+ {q:"What is 'machine learning'?",opts:["Robots building robots","Systems that improve from data and examples","Memorising a textbook","A programming language"],a:1,why:"<b>Machine learning</b> means a system finds patterns from examples rather than being hand-coded with every rule. It's the engine behind most modern AI."},
+],
+cyber:[
+ {q:"What makes a strong password?",opts:["Your pet's name","Long and unique, ideally a passphrase","'password123'","Your birthday"],a:1,why:"Length and uniqueness beat complexity tricks. A <b>long passphrase</b> like 'purple-otter-coffee-lamp' is strong and memorable. Never reuse passwords."},
+ {q:"What is 'phishing'?",opts:["A computer virus","Tricking you into revealing information via fake messages","A type of firewall","Slow internet"],a:1,why:"<b>Phishing</b> uses fake emails or texts to lure you into clicking bad links or sharing passwords. Check the sender and don't click links you didn't expect."},
+ {q:"What does two-factor authentication (2FA) add?",opts:["A faster login","A second proof of identity beyond your password","A new password monthly","More storage"],a:1,why:"<b>2FA</b> requires something extra (a code or app tap) on top of your password. Even if your password leaks, the second factor blocks most attackers."},
+ {q:"Why be cautious on public Wi-Fi?",opts:["It's slow","Others may intercept unencrypted data","It drains battery","It's illegal"],a:1,why:"On open networks, data <b>can be snooped</b>. Stick to HTTPS sites, avoid logging into sensitive accounts, or use a trusted VPN."},
+ {q:"Safest response to an urgent 'your account is locked — click here' email?",opts:["Click immediately","Don't click — go to the site directly yourself","Reply with your password","Forward it to friends"],a:1,why:"Urgency is a classic <b>pressure tactic</b>. Don't click the link — open the official site or app yourself and check. Real companies won't ask for passwords by email."},
+ {q:"What does a software 'update' often include?",opts:["Only new colours","Security fixes for known vulnerabilities","Slower performance","More ads always"],a:1,why:"Updates frequently <b>patch security holes</b> attackers exploit. Delaying them leaves a known door unlocked — update promptly."},
+],
+moons:[
+ {q:"Which is the largest moon in the Solar System?",opts:["Titan","Ganymede","Europa","Earth's Moon"],a:1,why:"<b>Ganymede</b>, orbiting Jupiter, is the largest moon of all — bigger even than the planet Mercury, and the only moon with its own magnetic field."},
+ {q:"Which moon is the most volcanically active world in the Solar System?",opts:["Io","Callisto","Triton","Mimas"],a:0,why:"<b>Io</b> has hundreds of active volcanoes, its surface constantly reshaped by eruptions driven by Jupiter's immense gravity."},
+ {q:"Which moon has a thick atmosphere with lakes and rain of liquid methane?",opts:["Europa","Enceladus","Titan","Phobos"],a:2,why:"<b>Titan</b>, Saturn's largest moon, is the only moon with a thick atmosphere — and the only other place we know of with stable surface liquid, though it's methane, not water."},
+ {q:"Which icy moon likely hides a global ocean and is a top place to search for life?",opts:["Europa","Deimos","Hyperion","Charon"],a:0,why:"<b>Europa</b> hides a vast ocean beneath its icy shell — possibly more water than all of Earth's — making it a prime target in the search for life."},
+ {q:"Neptune's largest moon orbits backward and was likely captured. Which is it?",opts:["Nereid","Proteus","Triton","Rhea"],a:2,why:"<b>Triton</b> orbits Neptune in retrograde — a sign it was likely captured from the Kuiper Belt. It even has active nitrogen geysers."},
+ {q:"Mars's moon Phobos is slowly fated to do what?",opts:["Escape into deep space","Break apart and form a ring","Collide with Deimos","Grow larger over time"],a:1,why:"<b>Phobos</b> spirals closer to Mars each year and will eventually be torn apart by tidal forces, forming a ring around the planet."},
+ {q:"Which Saturn moon resembles the Death Star, dominated by one giant crater?",opts:["Iapetus","Mimas","Phoebe","Rhea"],a:1,why:"<b>Mimas</b> is famous for its huge impact crater, giving it an uncanny resemblance to the Death Star from Star Wars."},
+ {q:"Pluto's largest moon is so big the two orbit a point in space between them. Name it.",opts:["Nix","Hydra","Styx","Charon"],a:3,why:"<b>Charon</b> is so large relative to Pluto that they orbit a shared point in space — sometimes called a 'double dwarf planet'."},
+],
+};
+
+/* ---------- read-first overview content (deeper lessons) ---------- */
+const OVERVIEW={
+history:{
+ lead:"History isn't about memorising dates — it's the story of how today's world came to be. With a handful of anchor points, the headlines, the borders and the arguments of the present start to make far more sense.",
+ cards:[
+  {h:"Think in eras, not isolated years",p:"Group the past into big chapters — ancient, classical, medieval, the Renaissance, the industrial age, the modern era. Knowing roughly how these sit relative to one another is far more useful than memorising exact dates, and it gives every new fact a place to live."},
+  {h:"Technology drives the biggest shifts",p:"The printing press, the steam engine, electricity and the internet each reshaped society faster than any single ruler or war. When you want to understand why an era changed, look first at the tools people suddenly had."},
+  {h:"The 20th century still shapes today",p:"Two World Wars, the Cold War, decolonisation, and the fall of the Berlin Wall in 1989 drew most of the borders, alliances and institutions we still live inside. Much of current geopolitics is a direct echo of that period."},
+  {h:"History is argued, not just recorded",p:"Historians constantly reinterpret events as new evidence and perspectives emerge. Knowing that the 'story' can shift makes you a sharper, more sceptical reader of any confident historical claim."}
+ ],
+ callout:"The pyramids of Giza were already about 2,000 years old when Cleopatra was born — she lived closer in time to the Moon landing than to their construction."
+},
+geography:{
+ lead:"Geography is the operating manual for the planet — why it's hot here and crowded there, how the weather behaves, and why nations sit where they do. A rough mental map makes the news instantly easier to follow.",
+ cards:[
+  {h:"Climate is not weather",p:"Weather is what's happening today; climate is the decades-long average. A single cold afternoon tells you nothing about long-term warming trends — the two operate on completely different timescales, and confusing them is one of the most common mistakes."},
+  {h:"Why we have seasons",p:"Seasons come from Earth's 23.5° axial tilt, not its distance from the Sun. Whichever hemisphere leans toward the Sun gets summer — which is why the northern and southern halves of the planet have opposite seasons at the same time."},
+  {h:"Where the people are",p:"India is now the world's most populous country, and most of humanity lives in a relatively small number of dense regions. Knowing the broad distribution of people and power helps you make sense of trade, migration and conflict."},
+  {h:"Oceans and scale",p:"The Pacific alone is larger than all of Earth's land combined. Our flat maps badly distort size — countries near the poles look far bigger than they really are, which quietly warps how we picture the world."}
+ ],
+ callout:"Time zones exist for one simple reason: Earth rotates, so the Sun is overhead at different places at different moments. Noon for you is the middle of the night halfway around the globe."
+},
+science:{
+ lead:"Science is less a pile of facts than a reliable way of asking 'why?' A surprisingly small set of core ideas explains an enormous amount of everyday life, from the colour of the sky to how your body fights illness.",
+ cards:[
+  {h:"Everything is made of atoms",p:"And atoms are almost entirely empty space. Solid objects feel solid because of electric forces between particles, not because matter is densely packed. Rearranging atoms is, in a sense, all that chemistry and cooking ever do."},
+  {h:"Light and sound follow rules",p:"Shorter (blue) wavelengths of light scatter most in our atmosphere, which is why the sky is blue and sunsets turn red. Sound, by contrast, needs a material to travel through — it moves fastest in solids and can't cross a vacuum at all."},
+  {h:"Life runs on biology",p:"DNA is the instruction manual inside nearly every cell, telling your body how to build and run itself. A vaccine works by giving your immune system a safe rehearsal, so it can react fast to the real threat later."},
+  {h:"Evidence beats intuition",p:"The strength of science is that claims are tested, measured and revised. A good experiment is designed to prove itself wrong — which is exactly why scientific knowledge can be trusted to improve over time."}
+ ],
+ callout:"An atom is so empty that if its nucleus were the size of a marble, the nearest electrons would orbit roughly the length of a football field away."
+},
+civics:{
+ lead:"Civics is how a society makes decisions and shares power. Understanding the basic machinery turns political news from confusing noise into something you can actually follow and judge.",
+ cards:[
+  {h:"Three branches, by design",p:"Most democracies split government into a legislative branch that makes laws, an executive that enforces them, and a judiciary that interprets them. They are deliberately kept separate so no single part can dominate the others."},
+  {h:"A constitution sets the rules",p:"A constitution is the foundational rulebook — it defines who holds power, what rights citizens have, and the limits ordinary laws must respect. Most legal and political fights ultimately come back to what it permits."},
+  {h:"How power changes hands",p:"Elections, and especially undecided 'swing' voters, often determine close outcomes — which is why campaigns invest so heavily in persuading them. Peaceful, regular transfers of power are a quiet but vital feature of stable democracies."},
+  {h:"Checks and balances in practice",p:"Separation of powers only works when each branch can actually restrain the others — through vetoes, courts, oversight and votes. The goal is always the same: make it hard for any one person or group to seize unchecked control."}
+ ],
+ callout:"The idea of separating powers is centuries old, but its purpose is refreshingly simple: make tyranny inconvenient by spreading authority across many hands."
+},
+finance:{
+ lead:"Personal finance rewards a few steady habits far more than clever tricks. Get the fundamentals right and let time do the heavy lifting — the basics genuinely matter more than picking winners.",
+ cards:[
+  {h:"Compounding is the engine",p:"Compound interest means your gains start earning gains of their own. Money invested early grows dramatically faster than the same amount invested later, even at an identical rate — which is why starting sooner usually beats starting bigger."},
+  {h:"Understand the cost of debt",p:"A debit card spends money you already have; a credit card borrows the bank's, to be repaid — with interest if you carry a balance. The APR tells you the yearly cost of that borrowing, so a lower number means cheaper debt."},
+  {h:"Build a buffer first",p:"Keeping roughly three to six months of expenses in easy-to-reach savings stops an unexpected bill or job loss from forcing you into high-interest debt. This cushion is the foundation everything else is built on."},
+  {h:"Spread your risk",p:"Diversifying — spreading money across many different investments — is the closest thing finance has to a free lunch. One bad outcome can't sink you when you haven't bet everything on a single horse."}
+ ],
+ callout:"A credit score is simply an estimate of how reliably you repay what you borrow. A higher score generally unlocks cheaper loans and easier approvals."
+},
+tech:{
+ lead:"Technology runs on a handful of plain ideas dressed up in jargon. Strip away the buzzwords and most of it becomes intuitive — and far easier to use wisely.",
+ cards:[
+  {h:"The cloud is just computers",p:"'The cloud' means powerful computers in data centres that you reach over the internet. Your photos and files aren't floating anywhere — they sit on a server in a building somewhere, owned by a company you're trusting to keep them safe."},
+  {h:"Algorithms are recipes",p:"An algorithm is simply a precise sequence of steps to produce a result. A cooking recipe is an algorithm; so is the formula that decides which posts appear in your social feed. Knowing this demystifies a lot of technology."},
+  {h:"Memory versus storage",p:"RAM is your device's short-term workspace for whatever you're actively doing; storage (a disk or SSD) keeps your files when the power is off. More RAM means smoother multitasking; more storage means room for more files."},
+  {h:"Encryption and trust",p:"The padlock in your browser means the connection is encrypted, so data in transit is scrambled from eavesdroppers. Crucially, it does not promise the website itself is honest — security and trustworthiness are two different things."}
+ ],
+ callout:"Open-source software has its code published openly, so anyone can inspect, improve or reuse it. Much of the internet quietly runs on exactly this kind of shared code."
+},
+health:{
+ lead:"Health literacy is understanding your body well enough to ask good questions, spot common myths, and make calmer decisions. It is not about self-diagnosing — it is about not being lost when it matters.",
+ cards:[
+  {h:"Match the treatment to the germ",p:"Antibiotics fight bacteria, not viruses, so taking them for a cold does nothing useful and helps breed resistant bacteria — a serious global problem. Finishing a prescribed course matters for the same reason: to fully clear the infection."},
+  {h:"Numbers are screens, not verdicts",p:"Measures like BMI and blood pressure are quick screening tools, not diagnoses. A reading such as 120/80 is a useful starting point, but a single number rarely tells the whole story of someone's health."},
+  {h:"Sleep is foundational",p:"Most adults need seven to nine hours a night. Chronic shortfall quietly erodes mood, memory, immunity and heart health — making sleep one of the highest-return health habits there is, not a luxury to trade away."},
+  {h:"Why trials use placebos",p:"In a good trial, a new drug is compared against a dummy treatment, because people sometimes improve simply from believing they're being treated — the placebo effect. Beating the placebo is how we know a treatment genuinely works."}
+ ],
+ callout:"If a claim about health sounds dramatic and certain, that's a cue to slow down and check the source. Real medical guidance tends to be measured and full of caveats."
+},
+economics:{
+ lead:"Everyday economics explains prices, paychecks and the headlines about 'the economy' — usually through a few core forces that, once you see them, appear everywhere.",
+ cards:[
+  {h:"Supply and demand",p:"When something is scarce but wanted, its price rises; when it's plentiful or unwanted, the price falls. This simple tug-of-war is the engine behind most prices you encounter, from concert tickets to housing."},
+  {h:"Inflation, plainly",p:"Inflation means your money gradually buys a little less than it used to. It often happens when the amount of money grows faster than the amount of goods — which is why printing money endlessly tends to backfire."},
+  {h:"Every choice has a cost",p:"Opportunity cost is the value of the next-best thing you gave up to make a choice. An hour or a dollar spent one way is one you can't spend another — keeping this in mind sharpens almost every decision."},
+  {h:"Reading the big picture",p:"GDP measures the total value of everything an economy produces; rising GDP usually signals growth, while a sustained fall can mean recession. These broad gauges help you interpret economic news without getting lost in the detail."}
+ ],
+ callout:"A recession is a broad, lasting slowdown in activity — bigger and longer than a single bad week on the stock market, which often grabs more headlines than it deserves."
+},
+ai:{
+ lead:"AI literacy is knowing what today's systems actually do under the hood — so you can use them effectively and avoid being misled by their confidence.",
+ cards:[
+  {h:"It predicts, it doesn't 'know'",p:"A large language model generates text by predicting likely next words from patterns in its training data. That makes it remarkably capable, but it also means it can produce fluent, confident answers that are simply wrong."},
+  {h:"Hallucinations are real",p:"AI models sometimes fabricate facts, names, quotes and citations that look entirely plausible. Anytime accuracy matters — numbers, sources, legal or medical details — treat the output as a draft to verify, not a final answer."},
+  {h:"Bias in, bias out",p:"Models learn from vast amounts of human-created data, and they absorb its biases along with its knowledge. That's why testing, human oversight and diverse data are essential rather than optional."},
+  {h:"Use it as an assistant",p:"AI shines at drafting, summarising, brainstorming and explaining — the tireless first-pass work. The reliable workflow is to let it accelerate you, then apply your own judgement and checks before anything counts."}
+ ],
+ callout:"A simple rule keeps you safe: trust AI for ideas and structure, verify it for facts. It's a fast assistant, not an oracle."
+},
+cyber:{
+ lead:"Cybersecurity basics protect your money, accounts and identity. A small number of habits stop the overwhelming majority of real-world attacks — you don't need to be an expert to be safe.",
+ cards:[
+  {h:"Length beats complexity",p:"A long, unique passphrase like 'purple-otter-coffee-lamp' is both stronger and easier to remember than a short string of symbols. The golden rule is never to reuse the same password across important accounts."},
+  {h:"Slow down on urgency",p:"Messages screaming 'your account is locked — click here now' are a classic manipulation tactic. Don't click the link; open the official site or app yourself and check. Legitimate companies won't ask for your password by email."},
+  {h:"Add a second lock",p:"Two-factor authentication asks for something extra — a code or an app tap — on top of your password. Even if your password leaks, that second factor blocks the great majority of attackers from getting in."},
+  {h:"Keep things updated",p:"Most software updates quietly patch security holes that attackers actively exploit. Delaying them leaves a known, advertised door unlocked, so updating promptly is one of the easiest wins in all of security."}
+ ],
+ callout:"On public Wi-Fi, assume others could be watching. Stick to encrypted (HTTPS) sites, avoid logging into sensitive accounts, or use a trusted VPN."
+},
+moons:{
+ lead:"From volcanic Io to ocean-hiding Europa, the Solar System's moons are some of the strangest and most beautiful worlds we know. This area is special: it comes with its own full explorer — illustrated maps of every planet, plus flashcards, matching and games.",
+ cards:[
+  {h:"Moons can outsize planets",p:"Ganymede, orbiting Jupiter, is the largest moon in the Solar System — bigger than the planet Mercury, and the only moon known to have its own magnetic field. Size, it turns out, has little to do with whether a world is a planet or a moon."},
+  {h:"Ocean worlds and the search for life",p:"Europa and Enceladus almost certainly hide global oceans beneath their icy crusts, and Enceladus even sprays water geysers into space. These hidden seas make them some of the most promising places to look for life beyond Earth."},
+  {h:"Each planet has its own family",p:"Mars has two tiny captured moons, Jupiter its 'Big Four', Saturn a collection of weird worlds including atmosphere-wrapped Titan, and Neptune's Triton orbits backward. Even dwarf-planet Pluto has a moon, Charon, nearly its own size."},
+  {h:"Explore it interactively",p:"Use the full explorer below to browse every planet and its notable moons with illustrations, then test yourself with flashcards, a matching game and quizzes. It's the most hands-on way to make these worlds stick."}
+ ],
+ callout:"Saturn alone has over 200 confirmed moons — far too many to memorise, so this tour focuses on the most memorable and scientifically important ones."
+}
+};
+
+const DAILY=[
+ {t:"Why does a compass point north?",b:"Earth is a giant, slightly tilted magnet. A compass needle is a tiny magnet that aligns with those field lines — pointing to the <b>magnetic</b> north pole, which drifts and isn't exactly the geographic one."},
+ {t:"Why is the sea salty?",b:"Rain weathers rock on land and rivers carry dissolved minerals — especially salt — into the ocean. Water evaporates and falls again, but the <b>salt stays behind</b> and builds up over millions of years."},
+ {t:"Why do we get goosebumps?",b:"Tiny muscles pull your hairs upright — a leftover reflex from furrier ancestors. Fluffed-up fur trapped heat and made animals look bigger. On us, it's a <b>harmless evolutionary echo</b>."},
+ {t:"Why does bread rise?",b:"Yeast eats sugars and releases carbon-dioxide gas. The gluten in dough is stretchy enough to <b>trap those bubbles</b>, puffing the loaf up — baking then sets the structure."},
+ {t:"Why is the number zero such a big deal?",b:"For most of history, many cultures had no symbol for 'nothing'. Zero unlocked <b>place value</b> (the difference between 5 and 50) and made modern maths, accounting and computing possible."},
+ {t:"Why do onions make you cry?",b:"Cutting an onion releases a sulphur compound that drifts up and reacts with the water in your eyes to form a mild acid. Your eyes flush it out with <b>tears</b>. Chilling the onion slows it down."},
+ {t:"Why does the Moon have phases?",b:"The Moon doesn't make light — it reflects the Sun. As it orbits Earth, we see <b>different fractions</b> of its lit half, from full to new and back, roughly every 29.5 days."},
+];
+
+const LEVEL_TITLES=["Curious Beginner","Quick Study","Sharp Mind","Well-Informed","Knowledge Seeker","Subject Adept","Trusted Source","Polymath","Walking Encyclopedia","Distinguished Mind"];
+
+const BADGES=[
+ {id:"first",   icon:"seedling",name:"First Steps", desc:"Answer your first question", test:s=>s.totalAnswered>=1},
+ {id:"streak3", icon:"spark",   name:"Consistency", desc:"Reach a 3-day streak",       test:s=>s.streak>=3},
+ {id:"perfect", icon:"medal",   name:"Flawless",    desc:"Ace a full session",         test:s=>s.perfectLessons>=1},
+ {id:"explorer",icon:"compass", name:"Explorer",    desc:"Master 3 knowledge areas",   test:s=>Object.keys(s.topicDone).length>=3},
+ {id:"scholar", icon:"book",    name:"Scholar",     desc:"Reach Level 3",              test:s=>s.level>=3},
+ {id:"master",  icon:"crown",   name:"Polymath",    desc:"Master every area",          test:s=>Object.keys(s.topicDone).length>=TOPICS.length},
+];
+
+/* ---------- state ---------- */
+const KEY="irstk_v2";
+let S=load();
+function load(){
+  try{const r=JSON.parse(localStorage.getItem(KEY));if(r)return r;}catch(e){}
+  return {xp:0,level:1,gems:0,streak:0,lastDay:null,totalAnswered:0,perfectLessons:0,topicDone:{},topicBest:{},badges:[],ddDay:null};
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function xpForLevel(l){return l*100;}
+
+/* ---------- streak ---------- */
+function todayStr(){return new Date().toISOString().slice(0,10);}
+function bumpStreak(){
+  const t=todayStr();
+  if(S.lastDay===t)return;
+  const y=new Date(Date.now()-86400000).toISOString().slice(0,10);
+  S.streak=(S.lastDay===y)?S.streak+1:1;
+  S.lastDay=t;
+}
+
+/* ---------- home ---------- */
+function renderHome(){
+  document.getElementById("streakN").textContent=S.streak;
+  document.getElementById("gemN").textContent=S.gems;
+  document.getElementById("lvlN").textContent=S.level;
+  document.getElementById("lvlTitle").textContent=LEVEL_TITLES[Math.min(S.level-1,LEVEL_TITLES.length-1)];
+  const need=xpForLevel(S.level);
+  document.getElementById("xpCur").textContent=S.xp;
+  document.getElementById("xpNext").textContent=need;
+  document.getElementById("xpFill").style.width=Math.min(100,S.xp/need*100)+"%";
+
+  const mastered=Object.keys(S.topicDone).length;
+  const earned=BADGES.filter(b=>S.badges.includes(b.id)).length;
+  document.getElementById("msAreas").textContent=mastered;
+  document.getElementById("msAnswered").textContent=S.totalAnswered;
+  document.getElementById("msAch").textContent=earned;
+
+  const g=document.getElementById("grid");g.innerHTML="";
+  TOPICS.forEach(t=>{
+    const total=BANK[t.id].length;
+    const best=S.topicBest[t.id]||0;
+    const done=S.topicDone[t.id];
+    const pct=Math.round(best/total*100);
+    const el=document.createElement("div");
+    el.className="topic";
+    el.onclick=()=>openOverview(t.id);
+    el.innerHTML=
+      '<div class="status">'+(done?'<span class="pill mastered">Mastered</span>':'')+'</div>'+
+      '<div class="top">'+
+        '<div class="ic" style="background:'+t.tint+';color:'+t.fg+'">'+svg(t.id)+'</div>'+
+        '<div><div class="name">'+t.name+'</div><div class="desc">'+t.desc+'</div></div>'+
+      '</div>'+
+      '<div class="foot">'+
+        '<div class="bar"><i style="width:'+pct+'%;background:'+t.bar+'"></i></div>'+
+        '<div class="pct">'+(best?best+'/'+total:'—')+'</div>'+
+      '</div>';
+    g.appendChild(el);
+  });
+  document.getElementById("mapMeta").textContent=mastered+" of "+TOPICS.length+" mastered";
+
+  const b=document.getElementById("badges");b.innerHTML="";
+  BADGES.forEach(bd=>{
+    const on=S.badges.includes(bd.id);
+    const el=document.createElement("div");
+    el.className="badge"+(on?" on":"");
+    el.innerHTML='<div class="disc">'+svg(bd.icon)+'</div><div><div class="bn">'+bd.name+'</div><div class="bd">'+bd.desc+'</div></div>';
+    b.appendChild(el);
+  });
+  document.getElementById("badgeMeta").textContent=earned+" earned";
+
+  const dd=DAILY[dayIndex()];
+  document.getElementById("ddTitle").textContent=dd.t;
+  if(S.ddDay===todayStr()){
+    document.getElementById("ddBody").innerHTML=dd.b;
+    document.getElementById("ddBtn").textContent="Logged for today";
+    document.getElementById("ddBtn").disabled=true;
+    document.getElementById("ddBtn").style.opacity=".7";
+  }
+}
+function dayIndex(){
+  const d=new Date();const start=new Date(d.getFullYear(),0,0);
+  return Math.floor((d-start)/86400000)%DAILY.length;
+}
+function dailyDiscovery(){
+  const dd=DAILY[dayIndex()];
+  document.getElementById("ddBody").innerHTML=dd.b;
+  if(S.ddDay!==todayStr()){
+    S.ddDay=todayStr();
+    addXP(10);bumpStreak();save();renderHome();
+    toast("+10 XP · Daily briefing logged");
+  }
+  document.getElementById("ddBtn").textContent="Logged for today";
+  document.getElementById("ddBtn").disabled=true;
+  document.getElementById("ddBtn").style.opacity=".7";
+}
+
+/* ---------- quiz engine ---------- */
+let Q=null,answered=false;
+function startQuiz(topicId){
+  const list=shuffle(BANK[topicId].slice()).map(q=>prepQ(q,topicId));
+  Q={list,idx:0,correct:0,lives:3,topicId,mixed:false};
+  enterQuiz();
+}
+function startMix(){
+  let all=[];
+  TOPICS.forEach(t=>BANK[t.id].forEach(q=>all.push(prepQ(q,t.id))));
+  all=shuffle(all).slice(0,8);
+  Q={list:all,idx:0,correct:0,lives:3,topicId:null,mixed:true};
+  enterQuiz();
+}
+function prepQ(q,topicId){
+  const order=shuffle(q.opts.map((o,i)=>({o,i})));
+  return {q:q.q,opts:order.map(x=>x.o),a:order.findIndex(x=>x.i===q.a),why:q.why,topicId};
+}
+function enterQuiz(){show("quiz");document.getElementById("lives").textContent=Q.lives;renderQuestion();}
+function renderQuestion(){
+  const item=Q.list[Q.idx];
+  const t=TOPICS.find(x=>x.id===item.topicId);
+  document.getElementById("qtopic").innerHTML=svg(t.id,'i')+'<span>'+t.name+'</span>';
+  document.getElementById("qtext").textContent=item.q;
+  document.getElementById("qnum").textContent="Question "+(Q.idx+1)+" of "+Q.list.length;
+  document.getElementById("qfill").style.width=(Q.idx/Q.list.length*100)+"%";
+  const keys=["A","B","C","D"];
+  const wrap=document.getElementById("opts");wrap.innerHTML="";
+  item.opts.forEach((o,i)=>{
+    const el=document.createElement("button");
+    el.className="opt";
+    el.innerHTML='<span class="key">'+keys[i]+'</span><span>'+o+'</span>'+svg('check','mk i');
+    el.onclick=()=>answer(i,el);
+    wrap.appendChild(el);
+  });
+}
+function answer(i,el){
+  if(answered)return;answered=true;
+  const item=Q.list[Q.idx];
+  const all=document.querySelectorAll(".opt");
+  all.forEach(o=>o.classList.add("disabled"));
+  if(i===item.a){el.classList.add("correct");Q.correct++;openDrawer(true,item.why);}
+  else{
+    el.classList.add("wrong");all[item.a].classList.add("correct");
+    Q.lives--;document.getElementById("lives").textContent=Q.lives;
+    openDrawer(false,item.why);
+  }
+}
+function openDrawer(good,why){
+  const d=document.getElementById("drawer");
+  d.className="drawer up "+(good?"good":"bad");
+  document.getElementById("scrim").classList.add("on");
+  document.getElementById("dHd").innerHTML='<span class="badge-ic">'+svg(good?'check':'info')+'</span>'+(good?"Correct":"Not quite");
+  document.getElementById("dWhy").innerHTML=why;
+  const last=Q.idx>=Q.list.length-1||Q.lives<=0;
+  document.getElementById("dBtn").textContent=last?"View results":"Continue";
+}
+function nextQuestion(){
+  document.getElementById("drawer").className="drawer";
+  document.getElementById("scrim").classList.remove("on");
+  answered=false;
+  if(Q.lives<=0)return finishQuiz(false);
+  Q.idx++;
+  if(Q.idx>=Q.list.length)return finishQuiz(true);
+  renderQuestion();
+}
+
+/* ---------- finish ---------- */
+function finishQuiz(completed){
+  const total=Q.list.length,score=Q.correct;
+  const perfect=completed&&score===total;
+  const xp=score*15+(perfect?40:0)+(completed?10:0);
+  const ranOut=!completed;
+
+  addXP(xp);
+  S.gems+=score;S.totalAnswered+=total;bumpStreak();
+  if(perfect)S.perfectLessons++;
+  if(!Q.mixed){
+    const prev=S.topicBest[Q.topicId]||0;
+    if(score>prev)S.topicBest[Q.topicId]=score;
+    if(score>=Math.ceil(total*0.8))S.topicDone[Q.topicId]=true;
+  }
+  const newBadges=checkBadges();
+  save();
+
+  show("result");
+  const pass=score>=total*0.6;
+  const icon=perfect?"trophy":pass?"check":ranOut?"flag":"book";
+  const col=perfect?"var(--gold)":pass?"var(--good)":"var(--accent)";
+  const rb=document.getElementById("rBadge");
+  rb.style.background=col;rb.innerHTML=svg(icon);
+  document.getElementById("rTitle").textContent=perfect?"Flawless session":ranOut?"Out of attempts":"Session complete";
+  document.getElementById("rSub").textContent=perfect?"A perfect run — you clearly know this.":ranOut?"You still earned progress. Review and try again.":pass?"Solid work. Your knowledge is compounding.":"Every miss is a fact learned. Keep going.";
+  document.getElementById("rScore").textContent=score+"/"+total;
+  document.getElementById("rXP").textContent="+"+xp;
+  document.getElementById("rStreak").textContent=S.streak;
+  if(pass)burst();
+  if(newBadges.length)setTimeout(()=>toast("Achievement unlocked · "+newBadges[0].name),750);
+}
+function againSame(){if(Q.mixed)startMix();else startQuiz(Q.topicId);}
+
+/* ---------- xp / badges ---------- */
+function addXP(n){
+  S.xp+=n;let leveled=false;
+  while(S.xp>=xpForLevel(S.level)){S.xp-=xpForLevel(S.level);S.level++;leveled=true;}
+  if(leveled)setTimeout(()=>{toast("Level up · you're now Level "+S.level);burst();},450);
+}
+function checkBadges(){
+  const newly=[];
+  BADGES.forEach(b=>{if(!S.badges.includes(b.id)&&b.test(S)){S.badges.push(b.id);newly.push(b);}});
+  return newly;
+}
+
+/* ---------- nav ---------- */
+function show(id){
+  ["home","overview","quiz","result"].forEach(x=>document.getElementById(x).style.display=(x===id?"block":"none"));
+  window.scrollTo(0,0);
+}
+
+/* ---------- overview (read-first) ---------- */
+function openOverview(id){renderOverview(id);show("overview");}
+function renderOverview(id){
+  const t=TOPICS.find(x=>x.id===id);
+  const ov=OVERVIEW[id]||{lead:"",cards:[],callout:""};
+  const total=(BANK[id]||[]).length;
+  const best=S.topicBest[id]||0;
+  const metaBits=[t.desc];
+  if(total)metaBits.push(total+" quiz questions");
+  if(best)metaBits.push("best "+best+"/"+total);
+  const cards=ov.cards.map((c,i)=>
+    '<div class="learn"><h4><span class="n">'+(i+1)+'</span>'+c.h+'</h4><p>'+c.p+'</p></div>').join('');
+  let actions='';
+  if(t.explorer){
+    actions+='<a class="btn primary" href="'+t.explorer+'">'+svg('arrow')+'Open the full explorer</a>';
+    actions+='<button class="btn ghost" onclick="startQuiz(\''+id+'\')">'+svg('play')+'Take the quick quiz</button>';
+  }else{
+    actions+='<button class="btn primary" onclick="startQuiz(\''+id+'\')">'+svg('play')+'Start the quiz</button>';
+    actions+='<button class="btn ghost" onclick="goHome()">Back to dashboard</button>';
+  }
+  document.getElementById("ovContent").innerHTML=
+    '<div class="ov-head"><div class="ov-ic" style="background:'+t.tint+';color:'+t.fg+'">'+svg(t.id)+'</div>'+
+      '<div><h2>'+t.name+'</h2><div class="d">'+metaBits.join(' · ')+'</div></div></div>'+
+    '<p class="ov-lead">'+ov.lead+'</p>'+
+    '<div class="sec"><h3>Key things to know</h3></div>'+
+    '<div class="learn-grid">'+cards+'</div>'+
+    '<div class="callout">'+svg('spark')+'<div class="ct"><b>Did you know — </b>'+ov.callout+'</div></div>'+
+    '<div class="ov-actions">'+actions+'</div>';
+}
+function goHome(){renderHome();show("home");}
+function quitQuiz(){if(confirm("Leave this session? Progress within it won't be saved."))goHome();}
+
+/* ---------- fx ---------- */
+function toast(msg){
+  const t=document.getElementById("toast");
+  document.getElementById("toastMsg").textContent=msg;
+  t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),2600);
+}
+function burst(){
+  const colors=["#3f3d9c","#5957c4","#a87b1e","#1f8a5b","#8e8ce6"];
+  for(let i=0;i<60;i++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=Math.random()*100+"vw";c.style.background=colors[i%colors.length];
+    c.style.transform="rotate("+Math.random()*360+"deg)";
+    document.body.appendChild(c);
+    const dur=1400+Math.random()*1100;
+    c.animate([{transform:"translateY(0) rotate(0)",opacity:1},{transform:"translateY(108vh) rotate("+(720*(Math.random()>.5?1:-1))+"deg)",opacity:.85}],{duration:dur,easing:"cubic-bezier(.2,.6,.4,1)"});
+    setTimeout(()=>c.remove(),dur);
+  }
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function resetAll(){if(confirm("Erase all progress, levels and achievements on this device?")){localStorage.removeItem(KEY);S=load();goHome();toast("Progress reset");}}
+
+document.getElementById("scrim").addEventListener("click",()=>{if(document.getElementById("drawer").classList.contains("up"))nextQuestion();});
+document.addEventListener("keydown",e=>{
+  if(document.getElementById("quiz").style.display!=="block")return;
+  if(document.getElementById("drawer").classList.contains("up")){
+    if(e.key==="Enter"||e.key===" "){nextQuestion();e.preventDefault();}return;
+  }
+  const map={"1":0,"2":1,"3":2,"4":3,"a":0,"b":1,"c":2,"d":3};
+  if(e.key.toLowerCase() in map){const opts=document.querySelectorAll(".opt");const el=opts[map[e.key.toLowerCase()]];if(el)el.click();}
+});
+
+goHome();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_europa" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#e8dfd1"/>
+    <stop offset="45%" stop-color="#cdb89a"/>
+    <stop offset="100%" stop-color="#5c5245"/>
+  </radialGradient>
+  <radialGradient id="sh_europa" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_europa"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_europa)"/>
+<g clip-path="url(#c_europa)"><circle cx="91" cy="110" r="8" fill="#8f806b" opacity="0.5"/><circle cx="119" cy="90" r="5" fill="#8f806b" opacity="0.5"/><circle cx="102" cy="90" r="6" fill="#8f806b" opacity="0.5"/><circle cx="108" cy="123" r="4" fill="#8f806b" opacity="0.5"/><circle cx="97" cy="87" r="6" fill="#8f806b" opacity="0.5"/><circle cx="101" cy="99" r="6" fill="#8f806b" opacity="0.5"/><circle cx="41" cy="127" r="5" fill="#8f806b" opacity="0.5"/><circle cx="149" cy="93" r="9" fill="#8f806b" opacity="0.5"/><circle cx="97" cy="104" r="6" fill="#8f806b" opacity="0.5"/><circle cx="62" cy="74" r="4" fill="#8f806b" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_europa)"/>
+
+</g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_neptune" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#a6b5ee"/>
+    <stop offset="45%" stop-color="#3b5bdb"/>
+    <stop offset="100%" stop-color="#1a2862"/>
+  </radialGradient>
+  <radialGradient id="sh_neptune" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_neptune"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_neptune)"/>
+<g clip-path="url(#c_neptune)"><rect x="20" y="40" width="160" height="16" fill="#5d77e1" opacity="0.5"/><rect x="20" y="56" width="160" height="14" fill="#324ebc" opacity="0.5"/><rect x="20" y="70" width="160" height="16" fill="#3754cc" opacity="0.5"/><rect x="20" y="86" width="160" height="12" fill="#5470df" opacity="0.5"/><rect x="20" y="98" width="160" height="16" fill="#2e48ad" opacity="0.5"/><rect x="20" y="113" width="160" height="15" fill="#4261dc" opacity="0.5"/><rect x="20" y="128" width="160" height="15" fill="#29409b" opacity="0.5"/><rect x="20" y="143" width="160" height="9" fill="#3856d0" opacity="0.5"/><rect x="20" y="152" width="160" height="10" fill="#8195e7" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_neptune)"/>
+
+</g>
+</svg>

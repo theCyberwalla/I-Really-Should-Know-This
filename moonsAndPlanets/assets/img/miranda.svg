@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_miranda" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#d3d5d7"/>
+    <stop offset="45%" stop-color="#9ea3a8"/>
+    <stop offset="100%" stop-color="#47494b"/>
+  </radialGradient>
+  <radialGradient id="sh_miranda" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_miranda"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_miranda)"/>
+<g clip-path="url(#c_miranda)"><circle cx="75.5" cy="80.1" r="7.9" fill="#5e6164" opacity="0.26"/><circle cx="111.7" cy="91.8" r="4.7" fill="#5e6164" opacity="0.14"/><circle cx="153.5" cy="120.5" r="9.1" fill="#5e6164" opacity="0.22"/><circle cx="61.6" cy="76.5" r="9.7" fill="#5e6164" opacity="0.13"/><circle cx="99.1" cy="95.6" r="6.7" fill="#5e6164" opacity="0.16"/><circle cx="96.4" cy="107.2" r="3.4" fill="#5e6164" opacity="0.12"/><circle cx="145.9" cy="144.9" r="4.4" fill="#5e6164" opacity="0.14"/><circle cx="50.4" cy="89.1" r="9.4" fill="#5e6164" opacity="0.26"/><circle cx="153.8" cy="119.3" r="8.3" fill="#5e6164" opacity="0.23"/><circle cx="143.3" cy="138.6" r="5.8" fill="#5e6164" opacity="0.13"/><circle cx="139.4" cy="132.6" r="6.0" fill="#5e6164" opacity="0.19"/><circle cx="99.8" cy="89.4" r="6.8" fill="#5e6164" opacity="0.11"/><circle cx="123.3" cy="112.0" r="4.1" fill="#5e6164" opacity="0.25"/><circle cx="126.1" cy="108.5" r="10.9" fill="#5e6164" opacity="0.17"/><circle cx="97.5" cy="82.9" r="6.5" fill="#5e6164" opacity="0.10"/><circle cx="59.7" cy="124.3" r="9.2" fill="#5e6164" opacity="0.18"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_miranda)"/>
+
+</g>
+</svg>

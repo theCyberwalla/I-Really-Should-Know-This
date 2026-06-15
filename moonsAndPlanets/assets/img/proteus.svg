@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_proteus" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#b2b0ae"/>
+    <stop offset="45%" stop-color="#54504c"/>
+    <stop offset="100%" stop-color="#252422"/>
+  </radialGradient>
+  <radialGradient id="sh_proteus" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_proteus"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_proteus)"/>
+<g clip-path="url(#c_proteus)"><circle cx="107.9" cy="93.9" r="3.5" fill="#32302d" opacity="0.28"/><circle cx="146.0" cy="150.6" r="6.8" fill="#32302d" opacity="0.14"/><circle cx="86.1" cy="147.2" r="3.5" fill="#32302d" opacity="0.13"/><circle cx="108.8" cy="117.9" r="6.3" fill="#32302d" opacity="0.20"/><circle cx="117.8" cy="112.4" r="4.1" fill="#32302d" opacity="0.19"/><circle cx="125.1" cy="82.3" r="4.3" fill="#32302d" opacity="0.22"/><circle cx="142.4" cy="94.0" r="6.4" fill="#32302d" opacity="0.25"/><circle cx="62.5" cy="53.3" r="5.3" fill="#32302d" opacity="0.15"/><circle cx="69.8" cy="140.8" r="5.7" fill="#32302d" opacity="0.20"/><circle cx="169.5" cy="94.3" r="3.9" fill="#32302d" opacity="0.15"/><circle cx="153.2" cy="122.2" r="5.8" fill="#32302d" opacity="0.24"/><circle cx="147.3" cy="81.5" r="5.7" fill="#32302d" opacity="0.23"/><circle cx="138.7" cy="61.4" r="5.4" fill="#32302d" opacity="0.25"/><circle cx="101.6" cy="99.3" r="7.8" fill="#32302d" opacity="0.23"/><circle cx="121.8" cy="81.0" r="3.2" fill="#32302d" opacity="0.10"/><circle cx="137.7" cy="68.5" r="9.0" fill="#32302d" opacity="0.13"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_proteus)"/>
+
+</g>
+</svg>

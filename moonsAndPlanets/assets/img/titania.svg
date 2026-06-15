@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_titania" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#d1cbc7"/>
+    <stop offset="45%" stop-color="#9a8d84"/>
+    <stop offset="100%" stop-color="#453f3b"/>
+  </radialGradient>
+  <radialGradient id="sh_titania" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_titania"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_titania)"/>
+<g clip-path="url(#c_titania)"><circle cx="100.6" cy="98.0" r="9.7" fill="#5c544f" opacity="0.16"/><circle cx="105.0" cy="100.3" r="7.0" fill="#5c544f" opacity="0.21"/><circle cx="125.5" cy="51.2" r="3.8" fill="#5c544f" opacity="0.26"/><circle cx="148.6" cy="130.7" r="6.7" fill="#5c544f" opacity="0.20"/><circle cx="100.9" cy="86.2" r="3.5" fill="#5c544f" opacity="0.26"/><circle cx="109.6" cy="116.7" r="3.7" fill="#5c544f" opacity="0.17"/><circle cx="90.6" cy="130.6" r="10.5" fill="#5c544f" opacity="0.19"/><circle cx="50.7" cy="122.1" r="8.5" fill="#5c544f" opacity="0.14"/><circle cx="131.9" cy="56.4" r="5.1" fill="#5c544f" opacity="0.19"/><circle cx="84.3" cy="80.5" r="8.4" fill="#5c544f" opacity="0.21"/><circle cx="48.6" cy="120.4" r="4.3" fill="#5c544f" opacity="0.23"/><circle cx="109.2" cy="56.5" r="10.2" fill="#5c544f" opacity="0.24"/><circle cx="96.2" cy="101.1" r="3.8" fill="#5c544f" opacity="0.10"/><circle cx="124.1" cy="146.8" r="10.3" fill="#5c544f" opacity="0.25"/><circle cx="133.2" cy="81.5" r="9.5" fill="#5c544f" opacity="0.22"/><circle cx="103.8" cy="99.4" r="9.4" fill="#5c544f" opacity="0.16"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_titania)"/>
+
+</g>
+</svg>

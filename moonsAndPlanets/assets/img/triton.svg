@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_triton" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#ece3db"/>
+    <stop offset="45%" stop-color="#d6c2b0"/>
+    <stop offset="100%" stop-color="#60574f"/>
+  </radialGradient>
+  <radialGradient id="sh_triton" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_triton"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_triton)"/>
+<g clip-path="url(#c_triton)"><circle cx="76" cy="97" r="5" fill="#95877b" opacity="0.5"/><circle cx="71" cy="93" r="5" fill="#95877b" opacity="0.5"/><circle cx="114" cy="104" r="9" fill="#95877b" opacity="0.5"/><circle cx="141" cy="78" r="5" fill="#95877b" opacity="0.5"/><circle cx="48" cy="83" r="8" fill="#95877b" opacity="0.5"/><circle cx="164" cy="121" r="8" fill="#95877b" opacity="0.5"/><circle cx="55" cy="63" r="4" fill="#95877b" opacity="0.5"/><circle cx="128" cy="136" r="6" fill="#95877b" opacity="0.5"/><circle cx="68" cy="65" r="8" fill="#95877b" opacity="0.5"/><circle cx="110" cy="128" r="9" fill="#95877b" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_triton)"/>
+
+</g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_titan" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#edcea6"/>
+    <stop offset="45%" stop-color="#d9933b"/>
+    <stop offset="100%" stop-color="#61421a"/>
+  </radialGradient>
+  <radialGradient id="sh_titan" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_titan"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_titan)"/>
+<g clip-path="url(#c_titan)"><circle cx="95" cy="88" r="7" fill="#976629" opacity="0.5"/><circle cx="113" cy="97" r="7" fill="#976629" opacity="0.5"/><circle cx="80" cy="86" r="8" fill="#976629" opacity="0.5"/><circle cx="104" cy="112" r="8" fill="#976629" opacity="0.5"/><circle cx="118" cy="36" r="7" fill="#976629" opacity="0.5"/><circle cx="105" cy="112" r="5" fill="#976629" opacity="0.5"/><circle cx="143" cy="114" r="8" fill="#976629" opacity="0.5"/><circle cx="122" cy="91" r="8" fill="#976629" opacity="0.5"/><circle cx="118" cy="72" r="9" fill="#976629" opacity="0.5"/><circle cx="77" cy="113" r="6" fill="#976629" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_titan)"/>
+
+</g>
+</svg>

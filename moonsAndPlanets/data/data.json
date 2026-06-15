@@ -1,0 +1,710 @@
+{
+  "meta": {
+    "title": "Moons & Planets",
+    "tagline": "A tour of the Solar System's most notable moons",
+    "source": "info.md"
+  },
+  "planets": [
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "order": 1,
+      "type": "planet",
+      "image": "assets/img/mercury.svg",
+      "color": "#9a8f86",
+      "summary": "The smallest planet and closest to the Sun.",
+      "memorableFact": "Mercury has no moons and no substantial atmosphere.",
+      "mnemonic": null,
+      "moons": [],
+      "article": [
+        "Mercury is a world of brutal extremes. As the closest planet to the Sun, it races around its star in just 88 Earth days, faster than any other planet — which is exactly why the Romans named it after their swift-footed messenger god. Yet despite being so close to the Sun's furnace, it is not the hottest planet, because it has almost no atmosphere to trap heat.",
+        "That missing atmosphere makes Mercury a place of staggering contrasts. Sunlit surfaces can reach about 430 °C, hot enough to melt lead, while the night side plunges to around -180 °C. Stranger still, the planet spins so slowly on its axis that a single day-night cycle lasts about 176 Earth days — meaning a Mercury 'day' is longer than its year.",
+        "Up close, Mercury looks much like our own Moon: a grey, airless ball pocked with craters billions of years old. Its most dramatic scar, the Caloris Basin, is a crater so vast you could drop several countries inside it. Beneath the surface lies an outsized iron core that takes up most of the planet, and in the permanent shadows of its polar craters — never touched by sunlight — spacecraft have found pockets of frozen ice."
+      ]
+    },
+    {
+      "id": "venus",
+      "name": "Venus",
+      "order": 2,
+      "type": "planet",
+      "image": "assets/img/venus.svg",
+      "color": "#d9a05b",
+      "summary": "A scorching world wrapped in thick clouds.",
+      "memorableFact": "Venus rotates backward compared to most planets and has no moons.",
+      "mnemonic": null,
+      "moons": [],
+      "article": [
+        "Venus is often called Earth's twin, and on paper the comparison fits: it is almost exactly the same size and made of similar rock. But step closer and the resemblance collapses into nightmare. Venus is the hottest planet in the Solar System, with a surface temperature near 465 °C that never changes between day and night or between the equator and the poles.",
+        "The culprit is its atmosphere — a suffocating blanket of carbon dioxide nearly a hundred times heavier than Earth's, wrapped in clouds of sulfuric acid. This is the runaway greenhouse effect at its most extreme: sunlight gets in, heat cannot escape, and the whole planet has cooked itself. The pressure at the surface would crush a human instantly, equivalent to being nearly a kilometre underwater.",
+        "Venus also breaks the rules of motion. It spins backwards compared to most planets, so on Venus the Sun would rise in the west and set in the east. And it turns so lazily that a Venusian day is longer than a Venusian year. For all its hostility, Venus is breathtaking from afar — the brightest planet in our sky, the dazzling 'morning star' and 'evening star' that humans have admired for thousands of years."
+      ]
+    },
+    {
+      "id": "earth",
+      "name": "Earth",
+      "order": 3,
+      "type": "planet",
+      "image": "assets/img/earth.svg",
+      "color": "#3f7fbf",
+      "summary": "Our home planet and its single, well-studied Moon.",
+      "memorableFact": null,
+      "mnemonic": null,
+      "moons": [
+        {
+          "id": "moon",
+          "name": "Moon",
+          "image": "assets/img/moon.svg",
+          "facts": [
+            "The only moon humans have visited.",
+            "Causes Earth's tides.",
+            "Slowly moving away from Earth (~3.8 cm per year).",
+            "Contains footprints from the Apollo missions that may last millions of years."
+          ],
+          "top10": {
+            "rank": 7,
+            "hook": "Human footprints."
+          },
+          "article": [
+            "Our Moon is the only world beyond Earth that human beings have ever set foot on, and it remains a constant companion that shapes life here in ways we rarely notice. Its gravity pulls the oceans into the daily rhythm of the tides, and over billions of years it has acted like a stabiliser, keeping Earth's tilt steady enough for stable seasons and climate.",
+            "The Moon is slowly drifting away from us, about 3.8 centimetres each year, and because it has no wind or water to erode them, the bootprints left by the Apollo astronauts could survive for millions of years. Look up at its face and you are seeing a record of the Solar System's violent youth, frozen in craters that have barely changed since the dawn of the planets."
+          ]
+        }
+      ],
+      "article": [
+        "Earth is, so far, the only place in the Universe known to harbour life — and almost everything that makes it special comes down to balance. It sits in the Sun's 'habitable zone', just the right distance for water to exist as a liquid rather than boiling away or freezing solid. That ocean of liquid water, covering most of the planet, is the stage on which life first appeared and still thrives today.",
+        "Beneath our feet, Earth is restless and alive. Its surface is broken into drifting tectonic plates that grind, collide, and recycle the crust, building mountains and renewing the chemistry that life depends on. A churning iron core generates a powerful magnetic field — an invisible shield that deflects harmful radiation from the Sun and lets our atmosphere survive.",
+        "Earth's single large Moon plays a quiet but crucial role, steadying the tilt of our planet so that seasons stay gentle and predictable over millions of years. The result is a rare, stable haven: a blue, cloud-wrapped world that, seen from space, looks utterly unlike its scorched and frozen neighbours."
+      ]
+    },
+    {
+      "id": "mars",
+      "name": "Mars",
+      "order": 4,
+      "type": "planet",
+      "image": "assets/img/mars.svg",
+      "color": "#c1440e",
+      "summary": "The red planet with two tiny captured moons.",
+      "memorableFact": null,
+      "mnemonic": {
+        "label": "Tiny Twins",
+        "members": [
+          "Phobos",
+          "Deimos"
+        ]
+      },
+      "moons": [
+        {
+          "id": "phobos",
+          "name": "Phobos",
+          "image": "assets/img/phobos.svg",
+          "facts": [
+            "Orbits Mars in only 7.6 hours.",
+            "Getting closer to Mars each year.",
+            "Will eventually break apart and form a ring around Mars."
+          ],
+          "top10": {
+            "rank": 10,
+            "hook": "Destined to become a ring."
+          },
+          "article": [
+            "Phobos is the larger and closer of Mars's two little moons, and it is living on borrowed time. It whips around the planet in just 7.6 hours — faster than Mars itself rotates — so from the Martian surface it would appear to rise in the west and set in the east, crossing the sky twice a day.",
+            "With every orbit, Phobos creeps a little closer to Mars. In a few tens of millions of years the planet's gravity will tear it apart, and the debris may spread into a ring around Mars, the way Saturn's rings likely formed. This doomed, potato-shaped moon offers a rare chance to watch a world being slowly destroyed."
+          ]
+        },
+        {
+          "id": "deimos",
+          "name": "Deimos",
+          "image": "assets/img/deimos.svg",
+          "facts": [
+            "Tiny and oddly shaped.",
+            "Named after the Greek god of dread.",
+            "Rises and sets very slowly in the Martian sky."
+          ],
+          "top10": null,
+          "article": [
+            "Deimos is the smaller, more distant, and far more peaceful of Mars's two moons. Only a few kilometres across and lumpy in shape, it is so tiny that from the Martian surface it would look like little more than a bright star drifting slowly overhead.",
+            "Named after the Greek personification of dread — companion to Phobos, or 'fear' — Deimos takes its time, rising and setting so gradually that it lingers in the Martian sky for days. A thin layer of dust has smoothed over many of its craters, giving it a softer, more muted face than its restless sibling."
+          ]
+        }
+      ],
+      "article": [
+        "Mars glows a rusty red in our night sky, and the reason is surprisingly literal: its surface is covered in iron-rich dust that has quite literally rusted, staining the whole planet the colour of dried blood. That fiery appearance earned it the name of the Roman god of war, and it has haunted human imagination as a possible second home for centuries.",
+        "Today Mars is a cold, dry desert with an atmosphere too thin to breathe, but it wears the scars of a more dramatic past. It boasts the largest volcano in the Solar System, Olympus Mons, rising roughly three times the height of Mount Everest, and a canyon system called Valles Marineris so long it would stretch across the entire United States. Winds can whip up dust storms that swallow the whole planet for weeks.",
+        "Most tantalising of all are the signs that water once flowed here. Dry riverbeds, ancient lake basins, and minerals that only form in water all hint that Mars was once warmer and wetter — a place where life might have gained a foothold. Frozen water still survives at its polar caps and underground, which is why Mars remains the prime target in humanity's search for life beyond Earth."
+      ]
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "order": 5,
+      "type": "planet",
+      "image": "assets/img/jupiter.svg",
+      "color": "#c9a36a",
+      "summary": "The largest planet, home to the 'Big Four' Galilean moons.",
+      "memorableFact": null,
+      "mnemonic": {
+        "label": "The Big Four",
+        "members": [
+          "Io",
+          "Europa",
+          "Ganymede",
+          "Callisto"
+        ]
+      },
+      "moons": [
+        {
+          "id": "io",
+          "name": "Io",
+          "image": "assets/img/io.svg",
+          "facts": [
+            "Most volcanically active world in the Solar System.",
+            "Has hundreds of active volcanoes.",
+            "Surface constantly reshaped by eruptions."
+          ],
+          "top10": {
+            "rank": 3,
+            "hook": "Volcano world."
+          },
+          "article": [
+            "Io is the most volcanically active world in the entire Solar System, a moon that never rests. Its surface is a hellish, sulphur-stained landscape of yellows, oranges, and reds, constantly resurfaced by hundreds of active volcanoes that fling plumes of material hundreds of kilometres into space.",
+            "What powers all this fury is a cosmic tug-of-war. Caught between mighty Jupiter and its sibling moons, Io is flexed and squeezed by their competing gravity, generating tremendous internal heat through friction. The result is a young, ever-changing surface with almost no impact craters — they are simply paved over by fresh eruptions faster than they can accumulate."
+          ]
+        },
+        {
+          "id": "europa",
+          "name": "Europa",
+          "image": "assets/img/europa.svg",
+          "facts": [
+            "Ice-covered ocean world.",
+            "May contain more water than Earth.",
+            "One of the best places to search for extraterrestrial life."
+          ],
+          "top10": {
+            "rank": 1,
+            "hook": "Ocean beneath ice; possible life."
+          },
+          "article": [
+            "Europa may be one of the best places in the Solar System to look for alien life. Its surface is a shell of cracked, bright ice, crisscrossed by reddish streaks — but the real wonder lies beneath. Hidden under that frozen crust is a vast, dark, global ocean of liquid water that may hold more water than all of Earth's oceans combined.",
+            "The same gravitational squeezing that torments neighbouring Io keeps Europa's interior warm enough to stay liquid. Where there is water, warmth, and chemistry, there is the possibility of life, which is why scientists dream of one day drilling through the ice to explore the hidden sea. For now, Europa stands as one of the most tantalising mysteries in planetary science."
+          ]
+        },
+        {
+          "id": "ganymede",
+          "name": "Ganymede",
+          "image": "assets/img/ganymede.svg",
+          "facts": [
+            "Largest moon in the Solar System.",
+            "Bigger than the planet Mercury.",
+            "Only moon known to have its own magnetic field."
+          ],
+          "top10": {
+            "rank": 5,
+            "hook": "Largest moon."
+          },
+          "article": [
+            "Ganymede is the largest moon in the entire Solar System — bigger even than the planet Mercury. If it orbited the Sun on its own rather than circling Jupiter, we would happily call it a planet in its own right.",
+            "It holds another remarkable distinction: it is the only moon known to generate its own magnetic field, hinting at a molten, churning interior. Beneath its mix of ancient dark terrain and brighter grooved regions, Ganymede is also thought to hide a salty underground ocean, making this giant moon a world of surprising depth and complexity."
+          ]
+        },
+        {
+          "id": "callisto",
+          "name": "Callisto",
+          "image": "assets/img/callisto.svg",
+          "facts": [
+            "Most heavily cratered large object in the Solar System.",
+            "Ancient surface preserves billions of years of impacts."
+          ],
+          "top10": null,
+          "article": [
+            "Callisto is the most heavily cratered object known in the Solar System, its dark, ancient face packed so densely with impacts that there is scarcely room for new ones. That battered surface is essentially a museum, preserving a near-unbroken record of the bombardment that shaped the early Solar System billions of years ago.",
+            "Unlike its restless siblings, Callisto orbits far enough from Jupiter to have largely escaped the gravitational kneading that melts and reshapes the inner moons. Geologically quiet and unchanged for eons, it may nonetheless conceal a buried ocean — a still, deep secret beneath an utterly timeless surface."
+          ]
+        },
+        {
+          "id": "amalthea",
+          "name": "Amalthea",
+          "image": "assets/img/amalthea.svg",
+          "facts": [
+            "One of the reddest objects in the Solar System.",
+            "Helps feed Jupiter's faint rings."
+          ],
+          "top10": null,
+          "article": [
+            "Amalthea is a small, irregular moon that hugs close to Jupiter, well inside the orbits of the four giant Galilean moons. Lumpy and elongated, it is one of the reddest objects in the entire Solar System, glowing a strange ruddy colour that scientists are still working to fully explain.",
+            "As it races around Jupiter, Amalthea helps feed the planet's faint, dusty rings, shedding fine particles knocked loose by tiny impacts. It is a reminder that Jupiter's realm is filled not only with grand worlds but with smaller, stranger fragments too."
+          ]
+        }
+      ],
+      "article": [
+        "Jupiter is the giant of our Solar System — so massive that every other planet could fit inside it with room to spare, and more than twice as heavy as all of them combined. It is a true gas giant, with no solid surface to stand on; descend into its swirling clouds and the atmosphere simply grows thicker and hotter until it crushes everything around it.",
+        "Its most famous feature is the Great Red Spot, a colossal storm wider than the entire Earth that has been raging for centuries. The planet's striking stripes are bands of clouds racing in opposite directions at hundreds of kilometres per hour, painted in creams, browns, and oranges by exotic chemistry. Jupiter also wraps itself in the strongest magnetic field of any planet and a belt of radiation deadly to spacecraft.",
+        "Jupiter is almost a miniature solar system in its own right, circled by dozens of moons and a set of faint, dusty rings. Its enormous gravity shapes the whole neighbourhood — flinging some comets and asteroids away from the inner planets while pulling others in. In a very real sense, this giant has helped steer the history of Earth itself."
+      ]
+    },
+    {
+      "id": "saturn",
+      "name": "Saturn",
+      "order": 6,
+      "type": "planet",
+      "image": "assets/img/saturn.svg",
+      "color": "#e0c27a",
+      "summary": "The ringed giant and its family of weird worlds.",
+      "memorableFact": null,
+      "mnemonic": {
+        "label": "Weird Worlds",
+        "members": [
+          "Titan",
+          "Enceladus",
+          "Mimas",
+          "Iapetus"
+        ]
+      },
+      "moons": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "image": "assets/img/titan.svg",
+          "facts": [
+            "Larger than Mercury.",
+            "Only moon with a thick atmosphere.",
+            "Has lakes, rivers, and rain — but made of liquid methane."
+          ],
+          "top10": {
+            "rank": 2,
+            "hook": "Methane lakes and rain."
+          },
+          "article": [
+            "Titan is one of the most Earth-like and alien places imaginable at the same time. Larger than the planet Mercury, it is the only moon in the Solar System with a thick atmosphere — a hazy, golden veil of nitrogen so dense that a person could almost walk on its surface unprotected by a pressure suit.",
+            "Beneath that haze lies a landscape with rivers, lakes, and seas, and even rain falling from clouds — but here the liquid is not water. It is freezing-cold methane and ethane, flowing across a surface of water ice as hard as rock. With its rich chemistry and a possible water ocean deep below, Titan is considered one of the most promising places to search for exotic forms of life."
+          ]
+        },
+        {
+          "id": "enceladus",
+          "name": "Enceladus",
+          "image": "assets/img/enceladus.svg",
+          "facts": [
+            "Shoots giant water geysers into space.",
+            "Hidden global ocean beneath the ice.",
+            "One of the best places to look for life."
+          ],
+          "top10": {
+            "rank": 4,
+            "hook": "Water geysers."
+          },
+          "article": [
+            "Enceladus is a tiny, brilliant-white moon that hides one of the Solar System's biggest surprises. From great cracks near its south pole — nicknamed the 'tiger stripes' — it shoots towering geysers of water vapour and ice crystals hundreds of kilometres into space, some of which feed one of Saturn's rings.",
+            "Those plumes are direct evidence of a global ocean of liquid water sloshing beneath its icy shell. Better still, spacecraft flying through the spray have detected the chemical building blocks associated with life. For such a small world to be so active, and so promising in the search for life, makes Enceladus one of the most exciting destinations in all of planetary exploration."
+          ]
+        },
+        {
+          "id": "mimas",
+          "name": "Mimas",
+          "image": "assets/img/mimas.svg",
+          "facts": [
+            "Resembles the Death Star from Star Wars.",
+            "Dominated by a massive impact crater."
+          ],
+          "top10": null,
+          "article": [
+            "Mimas is famous for looking uncannily like the Death Star from Star Wars, thanks to one enormous impact crater that dominates an entire side of the little moon. Named Herschel, this crater is so large that the collision which formed it nearly shattered Mimas to pieces.",
+            "Small, icy, and heavily scarred, Mimas seems at first glance to be a quiet, frozen relic. Yet intriguing wobbles in its motion have led some scientists to suspect it may secretly hide an ocean beneath its battered surface — a hidden depth behind a famous face."
+          ]
+        },
+        {
+          "id": "iapetus",
+          "name": "Iapetus",
+          "image": "assets/img/iapetus.svg",
+          "facts": [
+            "One side is very dark, the other very bright.",
+            "Looks like a cosmic yin-yang."
+          ],
+          "top10": {
+            "rank": 9,
+            "hook": "Two-faced moon."
+          },
+          "article": [
+            "Iapetus is the two-faced moon of Saturn, a world split into startling light and dark. One hemisphere is as bright as fresh snow, while the other is as dark as coal, giving it the look of a cosmic yin-yang. The contrast is so stark that early astronomers could only see Iapetus on one side of its orbit, when its bright face was turned towards Earth.",
+            "Stranger still, a towering ridge of mountains runs almost exactly along its equator, wrapping the moon like the seam on a walnut and giving it a slightly squashed, distinctive shape. Between its mysterious colouring and its peculiar form, Iapetus remains one of Saturn's most puzzling moons."
+          ]
+        },
+        {
+          "id": "hyperion",
+          "name": "Hyperion",
+          "image": "assets/img/hyperion.svg",
+          "facts": [
+            "Shaped like a giant sponge.",
+            "Tumbling chaotically through space."
+          ],
+          "top10": null,
+          "article": [
+            "Hyperion looks less like a moon and more like a giant cosmic sponge, its surface riddled with deep, sharp-edged pits that give it a bizarre, porous appearance. So lightweight and loosely packed that much of its interior may be empty space, it absorbs impacts rather than throwing up the usual splashes of debris.",
+            "Hyperion is also one of the few worlds known to tumble chaotically through space, with no settled spin. If you stood on its surface, you could never predict where the Sun would next appear in the sky — a genuinely unpredictable little world."
+          ]
+        },
+        {
+          "id": "phoebe",
+          "name": "Phoebe",
+          "image": "assets/img/phoebe.svg",
+          "facts": [
+            "Likely captured from the outer Solar System.",
+            "Orbits backward relative to most moons."
+          ],
+          "top10": null,
+          "article": [
+            "Phoebe is an outsider in Saturn's family. It orbits far from the planet, going the 'wrong' way — backwards compared with most of Saturn's moons — a strong clue that it did not form alongside them but was captured later by Saturn's gravity.",
+            "Dark and primitive, Phoebe is thought to be a frozen wanderer from the distant outer Solar System, a cousin of the icy bodies beyond Neptune. As it slowly erodes, it sheds dark dust that forms a vast, faint ring around Saturn and may even be painting the dark face of the moon Iapetus."
+          ]
+        },
+        {
+          "id": "rhea",
+          "name": "Rhea",
+          "image": "assets/img/rhea.svg",
+          "facts": [
+            "Saturn's second-largest moon.",
+            "May once have had rings of its own."
+          ],
+          "top10": null,
+          "article": [
+            "Rhea is Saturn's second-largest moon, a cold, icy world covered in bright, ancient, heavily cratered terrain. Its surface is so frozen that the water ice making up much of its body behaves like solid rock.",
+            "Rhea holds a special place in the history of exploration: it was once suspected of having its own faint rings, which would have made it the only moon known to be encircled in that way. Though that idea remains unconfirmed, the possibility alone makes this quiet, frozen moon quietly remarkable."
+          ]
+        }
+      ],
+      "article": [
+        "Saturn is the jewel of the Solar System, instantly recognisable for the magnificent rings that encircle it. Those rings are made of countless chunks of ice and rock, ranging from grains of dust to house-sized boulders, all orbiting in a band tens of thousands of kilometres wide yet, astonishingly, only around ten metres thick in places — like a sheet of paper the size of a city.",
+        "The planet itself is a gas giant second in size only to Jupiter, yet it is so lightweight for its volume that, if you could find an ocean big enough, Saturn would float. Its golden, banded atmosphere hides bizarre features, including a strange six-sided 'hexagon' storm swirling around its north pole, a pattern unlike anything else known in nature.",
+        "Saturn is also a hub of activity for its enormous family of moons — well over a hundred of them. Among these are some of the most intriguing worlds anywhere: Titan, with its thick atmosphere and methane seas, and tiny Enceladus, which sprays ocean water into space. Together they make the Saturn system one of the most promising places to search for life beyond Earth."
+      ]
+    },
+    {
+      "id": "uranus",
+      "name": "Uranus",
+      "order": 7,
+      "type": "planet",
+      "image": "assets/img/uranus.svg",
+      "color": "#9fe0e0",
+      "summary": "The tilted ice giant with moons named for Shakespeare characters.",
+      "memorableFact": null,
+      "mnemonic": {
+        "label": "Shakespeare Moons",
+        "members": [
+          "Titania",
+          "Oberon",
+          "Ariel",
+          "Miranda",
+          "Umbriel"
+        ]
+      },
+      "moons": [
+        {
+          "id": "titania",
+          "name": "Titania",
+          "image": "assets/img/titania.svg",
+          "facts": [
+            "Largest moon of Uranus.",
+            "Deep canyons suggest past geological activity."
+          ],
+          "top10": null,
+          "article": [
+            "Titania is the largest moon of Uranus, a frozen ball of ice and rock named after the queen of the fairies in Shakespeare's 'A Midsummer Night's Dream'. Its surface bears enormous canyons and fault lines, evidence that long ago the moon's interior was active and that its crust cracked and shifted as it cooled.",
+            "Those vast scars suggest a more dramatic past than its cold, still appearance would imply today. Like the rest of the Uranian moons, Titania has been seen up close only once, leaving this distant icy queen largely unexplored."
+          ]
+        },
+        {
+          "id": "oberon",
+          "name": "Oberon",
+          "image": "assets/img/oberon.svg",
+          "facts": [
+            "Heavily cratered and ancient.",
+            "Possibly contains a buried ocean."
+          ],
+          "top10": null,
+          "article": [
+            "Oberon is the outermost of Uranus's large moons, named after the king of the fairies who rules alongside Titania in Shakespeare's play. Heavily cratered and ancient, its dark, reddish surface has changed little over billions of years, preserving a long record of impacts.",
+            "Some of its craters are ringed with mysterious dark material, and a number are floored with an unexplained dark substance. Scientists suspect Oberon, like several of its siblings, may harbour a buried ocean deep beneath its frozen crust."
+          ]
+        },
+        {
+          "id": "miranda",
+          "name": "Miranda",
+          "image": "assets/img/miranda.svg",
+          "facts": [
+            "Has the tallest known cliff in the Solar System.",
+            "Verona Rupes may be over 12 miles (20 km) high.",
+            "Looks like several worlds stitched together."
+          ],
+          "top10": {
+            "rank": 8,
+            "hook": "Giant cliffs."
+          },
+          "article": [
+            "Miranda is small but spectacular, often described as looking like several different worlds clumsily stitched together. Its jumbled surface mixes grooved terraces, sharp ridges, and chaotic patchwork regions that seem to make no sense side by side.",
+            "Its crowning feature is Verona Rupes, believed to be the tallest known cliff in the Solar System — a sheer drop that may plunge as much as 20 kilometres. An object falling from its top would take minutes to reach the bottom. Miranda's wild geography may be the result of a violent past, perhaps even a shattering and reassembly long ago."
+          ]
+        },
+        {
+          "id": "ariel",
+          "name": "Ariel",
+          "image": "assets/img/ariel.svg",
+          "facts": [
+            "Brightest Uranian moon.",
+            "Shows signs of resurfacing and tectonic activity."
+          ],
+          "top10": null,
+          "article": [
+            "Ariel is the brightest of Uranus's moons, its relatively young surface gleaming where fresh ice has covered over older terrain. Networks of valleys and channels suggest that material once flowed across it, smoothing away ancient craters.",
+            "These signs of resurfacing and tectonic activity hint that Ariel was geologically alive at some point in its history, reshaping itself from within. Among the cold, battered moons of Uranus, it stands out as one of the freshest-faced and most dynamic."
+          ]
+        },
+        {
+          "id": "umbriel",
+          "name": "Umbriel",
+          "image": "assets/img/umbriel.svg",
+          "facts": [
+            "Darkest major moon of Uranus.",
+            "Contains a mysterious bright ring inside a crater."
+          ],
+          "top10": null,
+          "article": [
+            "Umbriel is the dark enigma among Uranus's major moons, its dull, ancient surface reflecting little light and showing few signs of any geological activity. While its siblings bear canyons and fresh ice, Umbriel seems to have stayed frozen and unchanged for billions of years.",
+            "Its one striking feature is a mysterious bright ring nicknamed 'Wunda', sitting on the floor of a large crater and standing out vividly against the gloom. What created this lone bright spot on such a dark world remains an unsolved puzzle."
+          ]
+        }
+      ],
+      "article": [
+        "Uranus is the Solar System's great oddball, a planet that quite literally rolls on its side. While most worlds spin like upright tops, Uranus is tipped over by about 98 degrees, so its poles take turns pointing almost directly at the Sun. The likely cause was a catastrophic collision long ago, and the result is the most extreme seasons imaginable — each pole endures roughly 42 years of continuous sunlight followed by 42 years of darkness.",
+        "It is an ice giant, made largely of water, ammonia, and methane surrounding a small rocky core. That methane gives Uranus its serene, pale blue-green colour by absorbing red light. Despite this calm appearance, it has the coldest atmosphere of any planet, plunging to around -224 °C, colder even than distant Neptune.",
+        "Uranus keeps a faint set of rings and a collection of moons whose names break with tradition — instead of figures from Greek and Roman myth, they are drawn from the plays of Shakespeare and the poetry of Alexander Pope. Visited up close only once, by Voyager 2 in 1986, this tilted, frozen world still guards many of its secrets."
+      ]
+    },
+    {
+      "id": "neptune",
+      "name": "Neptune",
+      "order": 8,
+      "type": "planet",
+      "image": "assets/img/neptune.svg",
+      "color": "#3b5bdb",
+      "summary": "The windiest planet, with the retrograde moon Triton.",
+      "memorableFact": null,
+      "mnemonic": {
+        "label": "Triton Steals the Show",
+        "members": [
+          "Triton",
+          "Proteus",
+          "Nereid"
+        ]
+      },
+      "moons": [
+        {
+          "id": "triton",
+          "name": "Triton",
+          "image": "assets/img/triton.svg",
+          "facts": [
+            "Orbits backward (retrograde).",
+            "Likely a captured object from the Kuiper Belt.",
+            "Has active nitrogen geysers.",
+            "One of the coldest worlds ever visited."
+          ],
+          "top10": {
+            "rank": 6,
+            "hook": "Backward orbit and geysers."
+          },
+          "article": [
+            "Triton is Neptune's great prize, and one of the strangest large moons in the Solar System. It orbits backwards, against the direction of Neptune's spin — a tell-tale sign that it did not form there but was captured from the Kuiper Belt, the icy realm that Pluto also calls home.",
+            "Despite being one of the coldest places ever visited, at around -235 °C, Triton is not dead. Spacecraft spotted geysers erupting nitrogen gas and dark dust kilometres into its thin atmosphere, making it one of the few worlds known to be geologically active. Slowly spiralling inward, Triton is destined, far in the future, to be torn apart by Neptune's gravity."
+          ]
+        },
+        {
+          "id": "proteus",
+          "name": "Proteus",
+          "image": "assets/img/proteus.svg",
+          "facts": [
+            "Almost large enough to become spherical.",
+            "Extremely dark surface."
+          ],
+          "top10": null,
+          "article": [
+            "Proteus is one of Neptune's largest moons, yet it is so dark — reflecting only a tiny fraction of the sunlight that hits it — that it went unnoticed until the Voyager 2 flyby revealed it. Blacker than soot, it is one of the darkest objects in the Solar System.",
+            "Oddly shaped and boxy, Proteus sits right at the size limit where a world's own gravity should crush it into a sphere. It is just a little too small to have rounded out, leaving it as a lumpy, irregular giant rather than a tidy ball."
+          ]
+        },
+        {
+          "id": "nereid",
+          "name": "Nereid",
+          "image": "assets/img/nereid.svg",
+          "facts": [
+            "One of the most eccentric moon orbits known.",
+            "Distance from Neptune changes dramatically."
+          ],
+          "top10": null,
+          "article": [
+            "Nereid follows one of the most lopsided orbits of any moon in the Solar System. Rather than circling Neptune in a neat ring, it swings on a wildly stretched, egg-shaped path that carries it from relatively close to the planet out to vast distances and back again.",
+            "Over the course of a single orbit, its distance from Neptune changes dramatically. This eccentric, looping journey hints at a turbulent history — perhaps Nereid was flung onto its strange path long ago when Triton was captured and Neptune's moon system was thrown into chaos."
+          ]
+        }
+      ],
+      "article": [
+        "Neptune is the most distant planet from the Sun, a deep-blue giant so far away that it cannot be seen with the naked eye. Its discovery in 1846 was a triumph of pure mathematics: astronomers predicted exactly where an unseen planet must be by studying the way its gravity tugged on Uranus, then pointed their telescopes at that spot and found it almost immediately.",
+        "Though it sits in perpetual twilight, Neptune is anything but calm. It is the windiest planet known, with supersonic gales tearing through its atmosphere at over 2,000 kilometres per hour — faster than the speed of sound on Earth. Great dark storms, some as large as our entire planet, appear and vanish in its vivid blue clouds, which owe their colour to methane gas.",
+        "Far out in the cold, Neptune commands a family of moons led by Triton, a frozen world that orbits backwards and erupts with icy geysers. Like Uranus, Neptune has been visited just once, by Voyager 2 in 1989, leaving this remote blue sentinel at the edge of the planetary realm largely unexplored."
+      ]
+    },
+    {
+      "id": "pluto",
+      "name": "Pluto",
+      "order": 9,
+      "type": "dwarf",
+      "image": "assets/img/pluto.svg",
+      "color": "#caa472",
+      "summary": "A dwarf planet with a surprisingly rich moon system.",
+      "memorableFact": "Though no longer a major planet, Pluto has a fascinating moon system.",
+      "mnemonic": {
+        "label": "Charon is Almost Pluto's Equal",
+        "members": [
+          "Charon",
+          "Hydra",
+          "Nix",
+          "Kerberos",
+          "Styx"
+        ]
+      },
+      "moons": [
+        {
+          "id": "charon",
+          "name": "Charon",
+          "image": "assets/img/charon.svg",
+          "facts": [
+            "So large that Pluto and Charon orbit a point in space between them.",
+            "Sometimes called a 'double dwarf planet.'"
+          ],
+          "top10": null,
+          "article": [
+            "Charon is so large compared with Pluto — about half its width — that the two do not simply orbit as planet and moon. Instead, they circle a shared point in space that lies between them, forever locked face to face, which is why they are sometimes called a 'double dwarf planet'.",
+            "When New Horizons flew past in 2015, it revealed a surprisingly dramatic world: deep canyons, broad smooth plains, and a strange reddish stain across its north pole, thought to be material drifting over from Pluto's thin atmosphere. Far from a dull grey companion, Charon turned out to have a character all its own."
+          ]
+        },
+        {
+          "id": "hydra",
+          "name": "Hydra",
+          "image": "assets/img/hydra.svg",
+          "facts": [
+            "Spins chaotically.",
+            "Not tidally locked."
+          ],
+          "top10": null,
+          "article": [
+            "Hydra is one of Pluto's small outer moons, an irregular shard of ice tumbling through space. Unlike our orderly Moon, it is not locked into a steady spin, so it pitches and rolls chaotically as it travels around the Pluto-Charon pair.",
+            "Its bright, icy surface and unpredictable rotation make Hydra a tiny, restless member of Pluto's surprisingly busy little family of moons, discovered only in the era of powerful space telescopes."
+          ]
+        },
+        {
+          "id": "nix",
+          "name": "Nix",
+          "image": "assets/img/nix.svg",
+          "facts": [
+            "Irregularly shaped.",
+            "Rotates unpredictably."
+          ],
+          "top10": null,
+          "article": [
+            "Nix is another of Pluto's small, irregular moons, and like its sibling Hydra it spins in an unpredictable, tumbling fashion rather than keeping one face turned politely towards Pluto. Its rotation is so chaotic that an observer on its surface could never be sure when day or night would come.",
+            "Named after the Greek goddess of darkness and night — mother of Charon in myth — Nix is a small, icy fragment, part of the cluster of tiny moons that makes the distant Pluto system far livelier than its remoteness might suggest."
+          ]
+        },
+        {
+          "id": "kerberos",
+          "name": "Kerberos",
+          "image": "assets/img/kerberos.svg",
+          "facts": [
+            "Named after the three-headed dog of Greek mythology."
+          ],
+          "top10": null,
+          "article": [
+            "Kerberos is one of the smallest and faintest of Pluto's moons, a dark little body discovered only in 2011 as astronomers scrutinised the Pluto system in fine detail. It takes its name from Kerberos, the monstrous three-headed dog of Greek mythology that guarded the entrance to the underworld.",
+            "Tucked between the orbits of the brighter moons Nix and Hydra, this tiny, shadowy world helps complete the strangely intricate set of companions that circle the distant dwarf planet."
+          ]
+        },
+        {
+          "id": "styx",
+          "name": "Styx",
+          "image": "assets/img/styx.svg",
+          "facts": [
+            "Tiny moon named after the mythological river separating Earth from the underworld."
+          ],
+          "top10": null,
+          "article": [
+            "Styx is the tiniest and most elusive of Pluto's known moons, a sliver of ice so small and dim that it was not spotted until 2012. It is named after the mythological river Styx, which the dead were said to cross to enter the underworld — a fitting name for a faint traveller in Pluto's distant, shadowy realm.",
+            "Threading its way among Pluto's other little moons, Styx rounds out a remarkably complex miniature system, proof that even the smallest, coldest corners of the Solar System can hold hidden surprises."
+          ]
+        }
+      ],
+      "article": [
+        "Pluto was hailed as the ninth planet for 76 years before being reclassified in 2006 as a 'dwarf planet' — a decision that sparked affection and argument in equal measure. It rules the Kuiper Belt, a vast ring of icy bodies beyond Neptune, and is so far away that sunlight takes more than five hours to reach it, leaving it in a deep, eternal chill.",
+        "For decades Pluto was just a faint speck, until NASA's New Horizons spacecraft swept past in 2015 and revealed a world far more alive than anyone expected. It is famous for a huge, smooth, heart-shaped plain of frozen nitrogen, bordered by jagged mountains of water ice as tall as the Rockies and wrapped in a delicate blue haze.",
+        "Pluto and its largest moon, Charon, are so close in size that they orbit a point in space between them, locked face to face like a slowly waltzing double world. Together with its smaller moons, Pluto stands as a reminder that even on the frozen fringes of the Solar System, there are strange and beautiful places still waiting to be understood."
+      ]
+    }
+  ],
+  "top10": [
+    {
+      "rank": 1,
+      "moonId": "europa",
+      "name": "Europa",
+      "hook": "Ocean beneath ice; possible life."
+    },
+    {
+      "rank": 2,
+      "moonId": "titan",
+      "name": "Titan",
+      "hook": "Methane lakes and rain."
+    },
+    {
+      "rank": 3,
+      "moonId": "io",
+      "name": "Io",
+      "hook": "Volcano world."
+    },
+    {
+      "rank": 4,
+      "moonId": "enceladus",
+      "name": "Enceladus",
+      "hook": "Water geysers."
+    },
+    {
+      "rank": 5,
+      "moonId": "ganymede",
+      "name": "Ganymede",
+      "hook": "Largest moon."
+    },
+    {
+      "rank": 6,
+      "moonId": "triton",
+      "name": "Triton",
+      "hook": "Backward orbit and geysers."
+    },
+    {
+      "rank": 7,
+      "moonId": "moon",
+      "name": "Moon",
+      "hook": "Human footprints."
+    },
+    {
+      "rank": 8,
+      "moonId": "miranda",
+      "name": "Miranda",
+      "hook": "Giant cliffs."
+    },
+    {
+      "rank": 9,
+      "moonId": "iapetus",
+      "name": "Iapetus",
+      "hook": "Two-faced moon."
+    },
+    {
+      "rank": 10,
+      "moonId": "phobos",
+      "name": "Phobos",
+      "hook": "Destined to become a ring."
+    }
+  ]
+}

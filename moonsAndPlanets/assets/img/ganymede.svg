@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_ganymede" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#d2cbc3"/>
+    <stop offset="45%" stop-color="#9b8c7a"/>
+    <stop offset="100%" stop-color="#453e36"/>
+  </radialGradient>
+  <radialGradient id="sh_ganymede" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_ganymede"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_ganymede)"/>
+<g clip-path="url(#c_ganymede)"><circle cx="160.4" cy="123.7" r="9.2" fill="#5d5449" opacity="0.17"/><circle cx="84.1" cy="65.0" r="8.9" fill="#5d5449" opacity="0.27"/><circle cx="89.9" cy="132.2" r="4.5" fill="#5d5449" opacity="0.12"/><circle cx="55.7" cy="143.2" r="5.4" fill="#5d5449" opacity="0.16"/><circle cx="158.2" cy="91.1" r="6.1" fill="#5d5449" opacity="0.11"/><circle cx="85.6" cy="102.2" r="8.6" fill="#5d5449" opacity="0.25"/><circle cx="67.4" cy="107.8" r="3.3" fill="#5d5449" opacity="0.11"/><circle cx="69.1" cy="150.8" r="4.2" fill="#5d5449" opacity="0.10"/><circle cx="88.1" cy="110.0" r="6.8" fill="#5d5449" opacity="0.24"/><circle cx="91.2" cy="75.9" r="4.4" fill="#5d5449" opacity="0.14"/><circle cx="124.6" cy="92.6" r="10.5" fill="#5d5449" opacity="0.18"/><circle cx="70.9" cy="88.9" r="8.1" fill="#5d5449" opacity="0.20"/><circle cx="87.7" cy="111.8" r="9.8" fill="#5d5449" opacity="0.27"/><circle cx="88.4" cy="131.8" r="3.2" fill="#5d5449" opacity="0.24"/><circle cx="124.1" cy="46.1" r="7.0" fill="#5d5449" opacity="0.15"/><circle cx="126.2" cy="111.4" r="4.8" fill="#5d5449" opacity="0.16"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_ganymede)"/>
+
+</g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_io" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#f4ebae"/>
+    <stop offset="45%" stop-color="#e8d44d"/>
+    <stop offset="100%" stop-color="#685f22"/>
+  </radialGradient>
+  <radialGradient id="sh_io" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_io"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_io)"/>
+<g clip-path="url(#c_io)"><circle cx="136" cy="92" r="7" fill="#a29435" opacity="0.5"/><circle cx="88" cy="104" r="6" fill="#a29435" opacity="0.5"/><circle cx="97" cy="98" r="9" fill="#a29435" opacity="0.5"/><circle cx="146" cy="128" r="7" fill="#a29435" opacity="0.5"/><circle cx="138" cy="107" r="6" fill="#a29435" opacity="0.5"/><circle cx="102" cy="106" r="9" fill="#a29435" opacity="0.5"/><circle cx="93" cy="91" r="7" fill="#a29435" opacity="0.5"/><circle cx="80" cy="74" r="7" fill="#a29435" opacity="0.5"/><circle cx="80" cy="95" r="7" fill="#a29435" opacity="0.5"/><circle cx="99" cy="100" r="9" fill="#a29435" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_io)"/>
+
+</g>
+</svg>

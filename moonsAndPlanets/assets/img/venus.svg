@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_venus" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#edd4b5"/>
+    <stop offset="45%" stop-color="#d9a05b"/>
+    <stop offset="100%" stop-color="#614828"/>
+  </radialGradient>
+  <radialGradient id="sh_venus" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_venus"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_venus)"/>
+<g clip-path="url(#c_venus)"><circle cx="124" cy="140" r="7" fill="#97703f" opacity="0.5"/><circle cx="85" cy="102" r="8" fill="#97703f" opacity="0.5"/><circle cx="112" cy="67" r="7" fill="#97703f" opacity="0.5"/><circle cx="100" cy="100" r="6" fill="#97703f" opacity="0.5"/><circle cx="96" cy="98" r="8" fill="#97703f" opacity="0.5"/><circle cx="102" cy="116" r="4" fill="#97703f" opacity="0.5"/><circle cx="150" cy="99" r="8" fill="#97703f" opacity="0.5"/><circle cx="98" cy="98" r="6" fill="#97703f" opacity="0.5"/><circle cx="92" cy="100" r="9" fill="#97703f" opacity="0.5"/><circle cx="93" cy="108" r="8" fill="#97703f" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_venus)"/>
+
+</g>
+</svg>

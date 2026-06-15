@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_jupiter" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#e6d5bb"/>
+    <stop offset="45%" stop-color="#c9a36a"/>
+    <stop offset="100%" stop-color="#5a492f"/>
+  </radialGradient>
+  <radialGradient id="sh_jupiter" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_jupiter"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_jupiter)"/>
+<g clip-path="url(#c_jupiter)"><rect x="20" y="40" width="160" height="12" fill="#d4b689" opacity="0.5"/><rect x="20" y="52" width="160" height="8" fill="#ddc6a2" opacity="0.5"/><rect x="20" y="61" width="160" height="9" fill="#a38456" opacity="0.5"/><rect x="20" y="69" width="160" height="10" fill="#977a4f" opacity="0.5"/><rect x="20" y="79" width="160" height="7" fill="#967a4f" opacity="0.5"/><rect x="20" y="86" width="160" height="9" fill="#cca872" opacity="0.5"/><rect x="20" y="95" width="160" height="7" fill="#d4b588" opacity="0.5"/><rect x="20" y="102" width="160" height="14" fill="#a28455" opacity="0.5"/><rect x="20" y="116" width="160" height="11" fill="#dac19a" opacity="0.5"/><rect x="20" y="127" width="160" height="6" fill="#aa8a59" opacity="0.5"/><rect x="20" y="133" width="160" height="7" fill="#b4925e" opacity="0.5"/><rect x="20" y="140" width="160" height="9" fill="#cfad7b" opacity="0.5"/><rect x="20" y="150" width="160" height="6" fill="#8f744b" opacity="0.5"/><rect x="20" y="156" width="160" height="11" fill="#d7bc92" opacity="0.5"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_jupiter)"/>
+
+</g>
+</svg>

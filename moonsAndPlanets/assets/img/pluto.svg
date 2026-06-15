@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<defs>
+  <radialGradient id="g_pluto" cx="35%" cy="30%" r="75%">
+    <stop offset="0%" stop-color="#e7d6bf"/>
+    <stop offset="45%" stop-color="#caa472"/>
+    <stop offset="100%" stop-color="#5a4933"/>
+  </radialGradient>
+  <radialGradient id="sh_pluto" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+  </radialGradient>
+</defs>
+<clipPath id="c_pluto"><circle cx="100" cy="100" r="80"/></clipPath>
+<g>
+
+<circle cx="100" cy="100" r="80" fill="url(#g_pluto)"/>
+<g clip-path="url(#c_pluto)"><circle cx="51.0" cy="80.5" r="3.2" fill="#796244" opacity="0.26"/><circle cx="68.3" cy="68.1" r="9.8" fill="#796244" opacity="0.16"/><circle cx="114.8" cy="57.2" r="4.1" fill="#796244" opacity="0.23"/><circle cx="51.5" cy="69.1" r="9.6" fill="#796244" opacity="0.22"/><circle cx="48.2" cy="61.1" r="4.4" fill="#796244" opacity="0.13"/><circle cx="72.4" cy="63.2" r="10.7" fill="#796244" opacity="0.23"/><circle cx="37.1" cy="85.3" r="4.0" fill="#796244" opacity="0.14"/><circle cx="150.9" cy="93.7" r="8.1" fill="#796244" opacity="0.19"/><circle cx="125.4" cy="109.8" r="4.7" fill="#796244" opacity="0.14"/><circle cx="92.6" cy="101.2" r="9.5" fill="#796244" opacity="0.13"/><circle cx="136.6" cy="100.6" r="5.1" fill="#796244" opacity="0.14"/><circle cx="92.9" cy="58.3" r="9.8" fill="#796244" opacity="0.27"/><circle cx="94.1" cy="135.1" r="5.7" fill="#796244" opacity="0.14"/><circle cx="96.8" cy="123.1" r="6.8" fill="#796244" opacity="0.22"/><circle cx="162.9" cy="91.5" r="3.6" fill="#796244" opacity="0.14"/><circle cx="159.3" cy="71.9" r="7.3" fill="#796244" opacity="0.14"/><circle cx="102.1" cy="100.9" r="10.6" fill="#796244" opacity="0.24"/><circle cx="58.8" cy="82.4" r="5.8" fill="#796244" opacity="0.19"/><circle cx="111.0" cy="146.7" r="7.9" fill="#796244" opacity="0.21"/><circle cx="102.1" cy="101.9" r="3.0" fill="#796244" opacity="0.24"/><circle cx="141.6" cy="80.3" r="8.9" fill="#796244" opacity="0.17"/><circle cx="84.6" cy="101.7" r="10.0" fill="#796244" opacity="0.10"/></g>
+<circle cx="100" cy="100" r="80" fill="url(#sh_pluto)"/>
+
+</g>
+</svg>
