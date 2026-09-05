@@ -1,92 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="description" content="Explore the planets and their notable moons, and learn through games." />
-  <title>Moons &amp; Planets</title>
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="assets/icons/icon-192.png" />
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .topbar-left{display:flex;align-items:center;gap:12px;min-width:0}
-    .app-back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:13px;
-      color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;
-      padding:6px 12px 6px 9px;box-shadow:var(--sh-sm);white-space:nowrap;
-      transition:background .14s,color .14s,border-color .14s}
-    .app-back:hover,.app-back:focus-visible{background:var(--accent-soft);color:var(--accent-ink);border-color:#dfe3fb}
-    .app-back svg{width:16px;height:16px;flex:0 0 auto}
-    .app-back-short{display:none}
-    .tabbar a.tab{text-decoration:none}
-    @media(max-width:600px){
-      .app-back-text{display:none}
-      .app-back-short{display:inline}
-      .brand-name{display:none}
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Your atlas has moved</title
+  ><style>
+    body {
+      font: 18px/1.6 system-ui;
+      max-width: 620px;
+      margin: 12vh auto;
+      padding: 24px;
+      background: #f5f2e9;
+      color: #223d34;
+    }
+    a {
+      color: #234c41;
+    }
+    h1 {
+      font: 48px Georgia;
     }
   </style>
-</head>
-<body>
-  <div id="stars" aria-hidden="true"></div>
-
-  <header class="topbar">
-    <div class="topbar-left">
-      <a class="app-back" href="../index.html" title="Back to I Really Should Know This">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
-        <span class="app-back-text">I Really Should Know This</span>
-        <span class="app-back-short">Main app</span>
-      </a>
-      <button class="brand" data-route="#/home" aria-label="Home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-22 12 12)"></ellipse>
-          </svg>
-        </span>
-        <span class="brand-name">Moons &amp; Planets</span>
-      </button>
-    </div>
-    <div class="topstats" id="topstats"></div>
-  </header>
-
-  <nav class="tabbar" id="tabbar">
-    <div class="nav-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"></circle>
-          <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(-22 12 12)"></ellipse>
-        </svg>
-      </span>
-      <span>Moons &amp; Planets</span>
-    </div>
-    <a href="../index.html" class="tab tab-back" title="Back to I Really Should Know This"><span class="ti">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6l-6 6 6 6"></path><path d="M19 12H5"></path></svg>
-    </span><span>Main app</span></a>
-    <button data-route="#/home" class="tab"><span class="ti">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path></svg>
-    </span><span>Home</span></button>
-    <button data-route="#/explore" class="tab"><span class="ti">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17M3.5 15h17M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
-    </span><span>Explore</span></button>
-    <button data-route="#/play" class="tab"><span class="ti">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="4"></rect><path d="M7 11v3M5.5 12.5h3M15.5 12h.01M18 14h.01"></path></svg>
-    </span><span>Play</span></button>
-    <button data-route="#/progress" class="tab"><span class="ti">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
-    </span><span>Progress</span></button>
-  </nav>
-
-  <main id="app" class="app"></main>
-
-  <script src="js/data.js"></script>
-  <script src="js/store.js"></script>
-  <script src="js/explore.js"></script>
-  <script src="js/games/flashcards.js"></script>
-  <script src="js/games/quiz.js"></script>
-  <script src="js/games/match.js"></script>
-  <script src="js/games/mnemonic.js"></script>
-  <script src="js/progress.js"></script>
-  <script src="js/app.js"></script>
-</body>
+  <h1>A new chapter.</h1>
+  <p>
+    The learning atlas has been rebuilt. The rebuilt astronomy collection
+    includes planet scales, moon worlds and the changing sky. Your previous
+    browser records have not been deleted.
+  </p>
+  <p><a href="../#/area/moons">Explore Moons & Planets →</a></p>
+  <p><a href="../#/about">Your preserved history and backups →</a></p>
+  <script>
+    if ("serviceWorker" in navigator)
+      navigator.serviceWorker
+        .getRegistration("./")
+        .then((r) => r?.update())
+        .catch(() => {});
+  </script>
 </html>

@@ -1,0 +1,502 @@
+[
+  {
+    "id_no": "1431",
+    "name_en": "Coastal and Marine Ecosystems of the Bijagós Archipelago – Omatí Minhô"
+  },
+  {
+    "id_no": "1673",
+    "name_en": "Vjetrenica Cave, Ravno"
+  },
+  {
+    "id_no": "1611",
+    "name_en": "Lençóis Maranhenses National Park"
+  },
+  {
+    "id_no": "692",
+    "name_en": "Forest Massif of Odzala-Kokoua"
+  },
+  {
+    "id_no": "111",
+    "name_en": "Bale Mountains National Park"
+  },
+  {
+    "id_no": "1693",
+    "name_en": "Cold Winter Deserts of Turan"
+  },
+  {
+    "id_no": "1697",
+    "name_en": "Nyungwe National Park"
+  },
+  {
+    "id_no": "1616",
+    "name_en": "Colchic Rainforests and Wetlands"
+  },
+  {
+    "id_no": "1584",
+    "name_en": "Hyrcanian Forests"
+  },
+  {
+    "id_no": "1604",
+    "name_en": "Vatnajökull National Park - Dynamic Nature of Fire and Ice"
+  },
+  {
+    "id_no": "1174",
+    "name_en": "Chiribiquete National Park – “The Maloca of the Jaguar”"
+  },
+  {
+    "id_no": "1563",
+    "name_en": "Al-Ahsa Oasis, an Evolving Cultural Landscape"
+  },
+  {
+    "id_no": "1434",
+    "name_en": "Chaîne des Puys - Limagne fault tectonic arena"
+  },
+  {
+    "id_no": "1490",
+    "name_en": "Western Tien-Shan"
+  },
+  {
+    "id_no": "262",
+    "name_en": "Sanganeb Marine National Park and Dungonab Bay – Mukkawar Island Marine National Park"
+  },
+  {
+    "id_no": "1499",
+    "name_en": "Antigua Naval Dockyard and Related Archaeological Sites"
+  },
+  {
+    "id_no": "1505",
+    "name_en": "Lut Desert"
+  },
+  {
+    "id_no": "1481",
+    "name_en": "The Ahwar of Southern Iraq: Refuge of Biodiversity and the Relict Landscape of the Mesopotamian Cities"
+  },
+  {
+    "id_no": "1503",
+    "name_en": "Nan Madol: Ceremonial Centre of Eastern Micronesia"
+  },
+  {
+    "id_no": "1356",
+    "name_en": "Blue and John Crow Mountains"
+  },
+  {
+    "id_no": "1432",
+    "name_en": "Okavango Delta"
+  },
+  {
+    "id_no": "1416",
+    "name_en": "Stevns Klint"
+  },
+  {
+    "id_no": "1438",
+    "name_en": "Trang An Landscape Complex"
+  },
+  {
+    "id_no": "1410",
+    "name_en": "El Pinacate and Gran Desierto de Altar Biosphere Reserve"
+  },
+  {
+    "id_no": "1430",
+    "name_en": "Namib Sand Sea"
+  },
+  {
+    "id_no": "1252",
+    "name_en": "Tajik National Park (Mountains of the Pamirs)"
+  },
+  {
+    "id_no": "1400",
+    "name_en": "Lakes of Ounianga"
+  },
+  {
+    "id_no": "1364",
+    "name_en": "Pearling, Testimony of an Island Economy"
+  },
+  {
+    "id_no": "1380",
+    "name_en": "Sangha Trinational"
+  },
+  {
+    "id_no": "1194",
+    "name_en": "Cultural Landscape of Bali Province: the <em>Subak</em> System as a Manifestation of the <em>Tri Hita Karana</em> Philosophy"
+  },
+  {
+    "id_no": "1386",
+    "name_en": "Rock Islands Southern Lagoon"
+  },
+  {
+    "id_no": "1343",
+    "name_en": "Cultural Sites of Al Ain (Hafit, Hili, Bidaa Bint Saud and Oases Areas)"
+  },
+  {
+    "id_no": "1377",
+    "name_en": "Wadi Rum Protected Area"
+  },
+  {
+    "id_no": "1060",
+    "name_en": "Kenya Lake System in the Great Rift Valley"
+  },
+  {
+    "id_no": "1325",
+    "name_en": "Phoenix Islands Protected Area"
+  },
+  {
+    "id_no": "1203",
+    "name_en": "Central Highlands of Sri Lanka"
+  },
+  {
+    "id_no": "1314",
+    "name_en": "Wadden Sea"
+  },
+  {
+    "id_no": "1237",
+    "name_en": "The Dolomites"
+  },
+  {
+    "id_no": "1102",
+    "name_en": "Saryarka – Steppe and Lakes of Northern Kazakhstan"
+  },
+  {
+    "id_no": "1179",
+    "name_en": "Swiss Tectonic Arena Sardona"
+  },
+  {
+    "id_no": "1245",
+    "name_en": "San Marino Historic Centre and Mount Titano"
+  },
+  {
+    "id_no": "1263",
+    "name_en": "Socotra Archipelago"
+  },
+  {
+    "id_no": "1259",
+    "name_en": "Le Morne Cultural Landscape"
+  },
+  {
+    "id_no": "887",
+    "name_en": "Kuk Early Agricultural Site"
+  },
+  {
+    "id_no": "1147",
+    "name_en": "Ecosystem and Relict Cultural Landscape of Lopé-Okanda"
+  },
+  {
+    "id_no": "1264",
+    "name_en": "Jeju Volcanic Island and Lava Tubes"
+  },
+  {
+    "id_no": "1207",
+    "name_en": "<i>Aflaj</i> Irrigation Systems of Oman"
+  },
+  {
+    "id_no": "1186",
+    "name_en": "Wadi Al-Hitan (Whale Valley)"
+  },
+  {
+    "id_no": "1193",
+    "name_en": "Shiretoko"
+  },
+  {
+    "id_no": "1195",
+    "name_en": "West Norwegian Fjords – Geirangerfjord and Nærøyfjord"
+  },
+  {
+    "id_no": "1138",
+    "name_en": "Coiba National Park and its Special Zone of Marine Protection"
+  },
+  {
+    "id_no": "1162",
+    "name_en": "Vredefort Dome"
+  },
+  {
+    "id_no": "590",
+    "name_en": "Dong Phayayen-Khao Yai Forest Complex"
+  },
+  {
+    "id_no": "1160",
+    "name_en": "Madriu-Perafita-Claror Valley"
+  },
+  {
+    "id_no": "1140",
+    "name_en": "Koutammakou, the Land of the Batammariba"
+  },
+  {
+    "id_no": "1161",
+    "name_en": "Pitons Management Area"
+  },
+  {
+    "id_no": "1094",
+    "name_en": "Purnululu National Park"
+  },
+  {
+    "id_no": "1083",
+    "name_en": "Three Parallel Rivers of Yunnan Protected Areas"
+  },
+  {
+    "id_no": "769",
+    "name_en": "Uvs Nuur Basin"
+  },
+  {
+    "id_no": "481",
+    "name_en": "Vat Phou and Associated Ancient Settlements within the Champasak Cultural Landscape"
+  },
+  {
+    "id_no": "967",
+    "name_en": "Noel Kempff Mercado National Park"
+  },
+  {
+    "id_no": "985",
+    "name_en": "Maloti-Drakensberg Park"
+  },
+  {
+    "id_no": "898",
+    "name_en": "High Coast / Kvarken Archipelago"
+  },
+  {
+    "id_no": "994",
+    "name_en": "Curonian Spit"
+  },
+  {
+    "id_no": "613",
+    "name_en": "Ruins of León Viejo"
+  },
+  {
+    "id_no": "1013",
+    "name_en": "Gunung Mulu National Park"
+  },
+  {
+    "id_no": "1017",
+    "name_en": "Central Suriname Nature Reserve"
+  },
+  {
+    "id_no": "652",
+    "name_en": "Puerto-Princesa Subterranean River National Park"
+  },
+  {
+    "id_no": "910",
+    "name_en": "Brimstone Hill Fortress National Park"
+  },
+  {
+    "id_no": "938",
+    "name_en": "Sukur Cultural Landscape"
+  },
+  {
+    "id_no": "934",
+    "name_en": "Laurisilva of Madeira"
+  },
+  {
+    "id_no": "889",
+    "name_en": "Desembarco del Granma National Park"
+  },
+  {
+    "id_no": "854",
+    "name_en": "East Rennell"
+  },
+  {
+    "id_no": "850",
+    "name_en": "Ouadi Qadisha (the Holy Valley) and the Forest of the Cedars of God (Horsh Arz el-Rab)"
+  },
+  {
+    "id_no": "814",
+    "name_en": "Morne Trois Pitons National Park"
+  },
+  {
+    "id_no": "798",
+    "name_en": "The Sundarbans"
+  },
+  {
+    "id_no": "820",
+    "name_en": "Cocos Island National Park"
+  },
+  {
+    "id_no": "806",
+    "name_en": "Hallstatt-Dachstein / Salzkammergut Cultural Landscape"
+  },
+  {
+    "id_no": "818",
+    "name_en": "Mill Network at Kinderdijk-Elshout"
+  },
+  {
+    "id_no": "754",
+    "name_en": "Lake Baikal"
+  },
+  {
+    "id_no": "764",
+    "name_en": "Belize Barrier Reef Reserve System"
+  },
+  {
+    "id_no": "749",
+    "name_en": "W-Arly-Pendjari Complex"
+  },
+  {
+    "id_no": "725",
+    "name_en": "Caves of Aggtelek Karst and Slovak Karst"
+  },
+  {
+    "id_no": "684",
+    "name_en": "Rwenzori Mountains National Park"
+  },
+  {
+    "id_no": "701",
+    "name_en": "Canaima National Park"
+  },
+  {
+    "id_no": "699",
+    "name_en": "City of Luxembourg: its Old Quarters and Fortifications"
+  },
+  {
+    "id_no": "675",
+    "name_en": "Joya de Cerén Archaeological Site"
+  },
+  {
+    "id_no": "588",
+    "name_en": "Danube Delta"
+  },
+  {
+    "id_no": "599",
+    "name_en": "Island of Mozambique"
+  },
+  {
+    "id_no": "573",
+    "name_en": "Air and Ténéré Natural Reserves"
+  },
+  {
+    "id_no": "494",
+    "name_en": "Andrefana Dry Forests"
+  },
+  {
+    "id_no": "551",
+    "name_en": "Te Wahipounamu – South West New Zealand"
+  },
+  {
+    "id_no": "516",
+    "name_en": "Cliff of Bandiagara (Land of the Dogons)"
+  },
+  {
+    "id_no": "506",
+    "name_en": "Banc d'Arguin National Park"
+  },
+  {
+    "id_no": "509",
+    "name_en": "Mosi-oa-Tunya / Victoria Falls"
+  },
+  {
+    "id_no": "455",
+    "name_en": "Meteora"
+  },
+  {
+    "id_no": "335",
+    "name_en": "Nanda Devi and Valley of Flowers National Parks"
+  },
+  {
+    "id_no": "485",
+    "name_en": "Hierapolis-Pamukkale"
+  },
+  {
+    "id_no": "407",
+    "name_en": "Dja Faunal Reserve"
+  },
+  {
+    "id_no": "419",
+    "name_en": "Gros Morne National Park"
+  },
+  {
+    "id_no": "403",
+    "name_en": "Kilimanjaro National Park"
+  },
+  {
+    "id_no": "380",
+    "name_en": "Garajonay National Park"
+  },
+  {
+    "id_no": "390",
+    "name_en": "Škocjan Caves"
+  },
+  {
+    "id_no": "369",
+    "name_en": "Giant's Causeway and Causeway Coast"
+  },
+  {
+    "id_no": "287",
+    "name_en": "Rock-Art Sites of Tadrart Acacus"
+  },
+  {
+    "id_no": "333",
+    "name_en": "Huascarán National Park"
+  },
+  {
+    "id_no": "289",
+    "name_en": "Lake Malawi National Park"
+  },
+  {
+    "id_no": "302",
+    "name_en": "Mana Pools National Park, Sapi and Chewore Safari Areas"
+  },
+  {
+    "id_no": "227",
+    "name_en": "Comoé National Park"
+  },
+  {
+    "id_no": "225",
+    "name_en": "Pirin National Park"
+  },
+  {
+    "id_no": "179",
+    "name_en": "Tassili n'Ajjer"
+  },
+  {
+    "id_no": "185",
+    "name_en": "Aldabra Atoll"
+  },
+  {
+    "id_no": "196",
+    "name_en": "Río Plátano Biosphere Reserve"
+  },
+  {
+    "id_no": "145",
+    "name_en": "Los Glaciares National Park"
+  },
+  {
+    "id_no": "155",
+    "name_en": "Mount Nimba Strict Nature Reserve"
+  },
+  {
+    "id_no": "25",
+    "name_en": "Djoudj National Bird Sanctuary"
+  },
+  {
+    "id_no": "8",
+    "name_en": "Ichkeul National Park"
+  },
+  {
+    "id_no": "100",
+    "name_en": "Durmitor National Park"
+  },
+  {
+    "id_no": "98",
+    "name_en": "Plitvice Lakes National Park"
+  },
+  {
+    "id_no": "75",
+    "name_en": "Grand Canyon National Park"
+  },
+  {
+    "id_no": "63",
+    "name_en": "Virunga National Park"
+  },
+  {
+    "id_no": "99",
+    "name_en": "Natural and Cultural Heritage of the Ohrid region"
+  },
+  {
+    "id_no": "33",
+    "name_en": "Białowieża Forest"
+  },
+  {
+    "id_no": "120",
+    "name_en": "Sagarmatha National Park"
+  },
+  {
+    "id_no": "1",
+    "name_en": "Galápagos Islands"
+  }
+]

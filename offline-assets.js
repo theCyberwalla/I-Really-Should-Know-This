@@ -1,0 +1,2 @@
+self.ATLAS_RELEASE="16f9bd7409086b46";
+self.ATLAS_ASSETS=["./favicon.svg","./index.html","./src/app.js","./src/astronomy.js","./src/content.js","./src/curriculum.js","./src/data/country-stories.js","./src/data/lesson-connections.js","./src/data/presidency-explanations.js","./src/data/presidents.json","./src/data/un-members.json","./src/data/world-explanations.js","./src/data/world.js","./src/geography.js","./src/learning.js","./src/models.js","./src/offline.js","./src/presidency-view.js","./src/presidents.js","./src/storage.js","./src/style.css"];
